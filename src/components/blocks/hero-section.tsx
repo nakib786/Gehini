@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, { useEffect, useRef, /* useState, */ useCallback } from 'react';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 
@@ -45,7 +45,7 @@ const PageHero: React.FC<PageHeroProps> = ({
   const OPACITY_BOOST = 0.6;
   const RADIUS_BOOST = 2.5;
   const GRID_CELL_SIZE = Math.max(50, Math.floor(INTERACTION_RADIUS / 1.5));
-
+  
   const handleMouseMove = useCallback((event: globalThis.MouseEvent) => {
     const canvas = canvasRef.current;
     if (!canvas) {
@@ -101,18 +101,20 @@ const PageHero: React.FC<PageHeroProps> = ({
 
   const handleResize = useCallback(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
-    const container = canvas.parentElement;
-    const width = container ? container.clientWidth : window.innerWidth;
-    const height = container ? container.clientHeight : window.innerHeight;
+    
+    if (canvas) {
+      const container = canvas.parentElement;
+      const width = container ? container.clientWidth : window.innerWidth;
+      const height = container ? container.clientHeight : window.innerHeight;
 
-    if (canvas.width !== width || canvas.height !== height ||
-      canvasSizeRef.current.width !== width || canvasSizeRef.current.height !== height)
-    {
-      canvas.width = width;
-      canvas.height = height;
-      canvasSizeRef.current = { width, height };
-      createDots();
+      if (canvas.width !== width || canvas.height !== height ||
+        canvasSizeRef.current.width !== width || canvasSizeRef.current.height !== height)
+      {
+        canvas.width = width;
+        canvas.height = height;
+        canvasSizeRef.current = { width, height };
+        createDots();
+      }
     }
   }, [createDots]);
 
@@ -191,6 +193,7 @@ const PageHero: React.FC<PageHeroProps> = ({
   useEffect(() => {
     handleResize();
     const canvasElement = canvasRef.current;
+    
     const handleMouseLeave = () => {
       mousePositionRef.current = { x: null, y: null };
     };
@@ -205,6 +208,7 @@ const PageHero: React.FC<PageHeroProps> = ({
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
       document.documentElement.removeEventListener('mouseleave', handleMouseLeave);
+      
       if (animationFrameId.current) {
         cancelAnimationFrame(animationFrameId.current);
       }
@@ -229,7 +233,10 @@ const PageHero: React.FC<PageHeroProps> = ({
 
   return (
     <div className="relative bg-[#111111] text-gray-300 py-24 flex flex-col overflow-x-hidden">
-      <canvas ref={canvasRef} className="absolute inset-0 z-0 pointer-events-none opacity-80" />
+      {/* Only render canvas for desktop (md and above) */}
+      {typeof window !== 'undefined' && window.innerWidth >= 768 && (
+        <canvas ref={canvasRef} className="absolute inset-0 z-0 pointer-events-none opacity-80" />
+      )}
       <div className="absolute inset-0 z-1 pointer-events-none" style={{
         background: 'linear-gradient(to bottom, transparent 0%, #111111 90%), radial-gradient(ellipse at center, transparent 40%, #111111 95%)'
       }}></div>

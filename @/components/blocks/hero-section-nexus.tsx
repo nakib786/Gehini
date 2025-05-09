@@ -10,7 +10,6 @@ import React, {
     useMemo,
     type ReactNode,
     type MouseEvent as ReactMouseEvent,
-    type FormEvent,
     type SVGProps,
 } from 'react';
 import {
@@ -373,6 +372,7 @@ const FormModal: React.FC<{
     isOpen: boolean;
     onClose: () => void;
 }> = ({ isOpen, onClose }) => {
+    const [selectedOption, setSelectedOption] = useState<string | null>(null);
     return (
         <AnimatePresence>
             {isOpen && (
@@ -1849,10 +1849,9 @@ service of others."
 const InteractiveHero: React.FC = () => {
    const canvasRef = useRef<HTMLCanvasElement>(null);
    const animationFrameId = useRef<number | null>(null);
-   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
-   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
    const [isScrolled, setIsScrolled] = useState<boolean>(false);
-   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+   const [isModalOpen, setIsModalOpen] = useState(false);
 
    const { scrollY } = useScroll();
    useMotionValueEvent(scrollY, "change", (latest) => {
