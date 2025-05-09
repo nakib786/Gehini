@@ -26,11 +26,11 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 dark:bg-[#131313] bg-white">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Educational Offerings</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Our Educational Offerings</h2>
+          <p className="text-xl dark:text-gray-300 text-gray-600 max-w-2xl mx-auto">
             Discover our specialized programs designed to nurture and develop young minds
           </p>
         </div>
@@ -43,11 +43,11 @@ const Features = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-light p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+              className="dark:bg-[#1D1D1D] dark:border dark:border-gray-800 bg-light p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow"
             >
               <div className="mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-              <p className="text-gray-600 mb-4">{feature.description}</p>
+              <h3 className="text-xl font-bold mb-3 dark:text-white">{feature.title}</h3>
+              <p className="dark:text-gray-300 text-gray-600 mb-4">{feature.description}</p>
               <Link
                 to={index === 0 ? "/tutoring" : "/cybersecurity"}
                 className="text-primary font-medium hover:underline inline-flex items-center"
@@ -70,30 +70,30 @@ const Testimonials = () => {
   const testimonials = [
     {
       quote: "The patient and nurturing approach at Gehini Gurukul helped my daughter excel in math, a subject she previously struggled with.",
-      author: "Sarah Johnson",
+      author: "Niharika Patel",
       role: "Parent of 7th grader",
-      image: "/placeholder-avatar-1.jpg",
+      image: "/images/avatars/placeholder-np.svg",
     },
     {
       quote: "I'm amazed at how much I've learned in the cybersecurity program. The practical approach made complex concepts easy to understand.",
-      author: "Michael Torres",
+      author: "Dhruv Mehta",
       role: "Cybersecurity Student",
-      image: "/placeholder-avatar-2.jpg",
+      image: "/images/avatars/placeholder-dm.svg",
     },
     {
       quote: "The tutors here truly embody the 'mother as first teacher' philosophy with their care and dedication to my son's learning journey.",
-      author: "Priya Sharma",
+      author: "Jigna Shah",
       role: "Parent of 4th grader",
-      image: "/placeholder-avatar-3.jpg",
+      image: "/images/avatars/placeholder-js.svg",
     },
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-light">
+    <section className="py-16 md:py-24 dark:bg-[#111111] bg-light">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Community Says</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">What Our Community Says</h2>
+          <p className="text-xl dark:text-gray-300 text-gray-600 max-w-2xl mx-auto">
             Hear from parents and students about their experiences with Gehini Gurukul
           </p>
         </div>
@@ -106,7 +106,7 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white p-6 rounded-xl shadow-md"
+              className="dark:bg-[#1D1D1D] dark:border dark:border-gray-800 bg-white p-6 rounded-xl shadow-md"
             >
               <div className="flex items-center mb-4">
                 <div className="mr-4">
@@ -117,11 +117,11 @@ const Testimonials = () => {
                   />
                 </div>
                 <div>
-                  <h4 className="font-bold">{testimonial.author}</h4>
-                  <p className="text-sm text-gray-500">{testimonial.role}</p>
+                  <h4 className="font-bold dark:text-white">{testimonial.author}</h4>
+                  <p className="text-sm dark:text-gray-400 text-gray-500">{testimonial.role}</p>
                 </div>
               </div>
-              <p className="text-gray-600 italic">"{testimonial.quote}"</p>
+              <p className="dark:text-gray-300 text-gray-600 italic">"{testimonial.quote}"</p>
             </motion.div>
           ))}
         </div>
@@ -133,17 +133,17 @@ const Testimonials = () => {
 // Call to Action Component
 const CallToAction = () => {
   return (
-    <section className="py-16 bg-primary text-white">
+    <section className="py-16 bg-primary text-[#111111]">
       <div className="container-custom text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Begin Your Learning Journey?</h2>
         <p className="text-xl mb-8 max-w-2xl mx-auto">
           Join Gehini Gurukul today and experience education with the nurturing care of a mother and the excellence of expert educators.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to="/contact" className="btn bg-white text-primary hover:bg-gray-100">
+          <Link to="/contact" className="btn bg-[#111111] text-primary hover:bg-[#222]">
             Register Now
           </Link>
-          <Link to="/about" className="btn border border-white text-white hover:bg-white/10">
+          <Link to="/about" className="btn border border-[#111111] text-[#111111] hover:bg-[#111111]/10">
             Learn More About Us
           </Link>
         </div>

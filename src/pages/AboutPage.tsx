@@ -34,11 +34,11 @@ const OurPhilosophy = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 dark:bg-[#131313] bg-white">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Philosophy</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Our Philosophy</h2>
+          <p className="text-xl dark:text-gray-300 text-gray-600 max-w-3xl mx-auto">
             At Gehini Gurukul, we believe that the attributes of a mother's teaching form the cornerstone of effective education
           </p>
         </div>
@@ -51,11 +51,11 @@ const OurPhilosophy = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-light p-8 rounded-xl shadow-md text-center"
+              className="dark:bg-[#1D1D1D] dark:border dark:border-gray-800 bg-light p-8 rounded-xl shadow-md text-center"
             >
               <div className="flex justify-center mb-4">{point.icon}</div>
-              <h3 className="text-xl font-bold mb-3">{point.title}</h3>
-              <p className="text-gray-600">{point.description}</p>
+              <h3 className="text-xl font-bold mb-3 dark:text-white">{point.title}</h3>
+              <p className="dark:text-gray-300 text-gray-600">{point.description}</p>
             </motion.div>
           ))}
         </div>
@@ -94,11 +94,11 @@ const TeacherProfiles = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-light">
+    <section className="py-16 md:py-24 dark:bg-[#111111] bg-light">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Meet Our Educators</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Meet Our Educators</h2>
+          <p className="text-xl dark:text-gray-300 text-gray-600 max-w-3xl mx-auto">
             Our team of experienced and passionate educators embody the nurturing spirit of Gehini Gurukul
           </p>
         </div>
@@ -111,7 +111,7 @@ const TeacherProfiles = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl shadow-md overflow-hidden"
+              className="dark:bg-[#1D1D1D] dark:border dark:border-gray-800 bg-white rounded-xl shadow-md overflow-hidden"
             >
               <img 
                 src={teacher.image} 
@@ -119,9 +119,9 @@ const TeacherProfiles = () => {
                 className="w-full h-64 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-1">{teacher.name}</h3>
+                <h3 className="text-xl font-bold mb-1 dark:text-white">{teacher.name}</h3>
                 <p className="text-primary font-medium mb-3">{teacher.role}</p>
-                <p className="text-gray-600">{teacher.bio}</p>
+                <p className="dark:text-gray-300 text-gray-600">{teacher.bio}</p>
               </div>
             </motion.div>
           ))}

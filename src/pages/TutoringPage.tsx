@@ -44,11 +44,11 @@ const SubjectsOffered = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 dark:bg-[#131313] bg-white">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Subjects We Offer</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Subjects We Offer</h2>
+          <p className="text-xl dark:text-gray-300 text-gray-600 max-w-3xl mx-auto">
             Our comprehensive curriculum covers all core K-12 subjects, delivered by experienced educators who specialize in nurturing learning
           </p>
         </div>
@@ -61,19 +61,19 @@ const SubjectsOffered = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-light p-8 rounded-xl shadow-md"
+              className="dark:bg-[#1D1D1D] dark:border dark:border-gray-800 bg-light p-8 rounded-xl shadow-md"
             >
               <div className="flex items-center mb-6">
                 <div className="mr-4">{category.icon}</div>
-                <h3 className="text-2xl font-bold">{category.category}</h3>
+                <h3 className="text-2xl font-bold dark:text-white">{category.category}</h3>
               </div>
               <div className="grid grid-cols-2 gap-2">
                 {category.subjects.map((subject, idx) => (
                   <div key={idx} className="flex items-center">
-                    <svg className="h-5 w-5 text-secondary mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="h-5 w-5 text-primary mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-gray-700">{subject}</span>
+                    <span className="dark:text-gray-300 text-gray-700">{subject}</span>
                   </div>
                 ))}
               </div>
@@ -106,11 +106,11 @@ const GradeLevels = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-light">
+    <section className="py-16 md:py-24 dark:bg-[#111111] bg-light">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Grade Levels We Support</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Grade Levels We Support</h2>
+          <p className="text-xl dark:text-gray-300 text-gray-600 max-w-3xl mx-auto">
             Our tutoring programs are tailored to meet the needs of students at every stage of their K-12 education
           </p>
         </div>
@@ -123,19 +123,19 @@ const GradeLevels = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white p-8 rounded-xl shadow-md h-full flex flex-col"
+              className="dark:bg-[#1D1D1D] dark:border dark:border-gray-800 bg-white p-8 rounded-xl shadow-md h-full flex flex-col"
             >
               <h3 className="text-2xl font-bold mb-4 text-primary">{grade.level}</h3>
-              <p className="text-gray-600 mb-6 flex-grow">{grade.description}</p>
+              <p className="dark:text-gray-300 text-gray-600 mb-6 flex-grow">{grade.description}</p>
               <div>
-                <h4 className="font-semibold mb-3">Key Focus Areas:</h4>
+                <h4 className="font-semibold mb-3 dark:text-white">Key Focus Areas:</h4>
                 <ul className="space-y-2">
                   {grade.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start">
-                      <svg className="h-5 w-5 text-secondary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="h-5 w-5 text-primary mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
-                      <span className="text-gray-700">{feature}</span>
+                      <span className="dark:text-gray-300 text-gray-700">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -151,11 +151,11 @@ const GradeLevels = () => {
 // Tutoring Methodology Component
 const TutoringMethodology = () => {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 dark:bg-[#131313] bg-white">
       <div className="container-custom">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Tutoring Methodology</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Our Tutoring Methodology</h2>
+          <p className="text-xl dark:text-gray-300 text-gray-600 max-w-3xl mx-auto">
             Our approach combines personalized attention with proven teaching methods, all delivered with motherly care
           </p>
         </div>
@@ -169,29 +169,29 @@ const TutoringMethodology = () => {
               viewport={{ once: true }}
               className="space-y-6"
             >
-              <div className="bg-light p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-2">1. Initial Assessment</h3>
-                <p className="text-gray-600">We begin by understanding each student's strengths, areas for improvement, learning style, and academic goals.</p>
+              <div className="dark:bg-[#1D1D1D] dark:border dark:border-gray-800 bg-light p-6 rounded-lg">
+                <h3 className="text-xl font-bold mb-2 dark:text-white">1. Initial Assessment</h3>
+                <p className="dark:text-gray-300 text-gray-600">We begin by understanding each student's strengths, areas for improvement, learning style, and academic goals.</p>
               </div>
               
-              <div className="bg-light p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-2">2. Personalized Learning Plan</h3>
-                <p className="text-gray-600">Our educators create a customized curriculum and approach tailored to the specific needs of each student.</p>
+              <div className="dark:bg-[#1D1D1D] dark:border dark:border-gray-800 bg-light p-6 rounded-lg">
+                <h3 className="text-xl font-bold mb-2 dark:text-white">2. Personalized Learning Plan</h3>
+                <p className="dark:text-gray-300 text-gray-600">Our educators create a customized curriculum and approach tailored to the specific needs of each student.</p>
               </div>
               
-              <div className="bg-light p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-2">3. Engaging Instruction</h3>
-                <p className="text-gray-600">Lessons are delivered using interactive and engaging methods that make learning enjoyable and effective.</p>
+              <div className="dark:bg-[#1D1D1D] dark:border dark:border-gray-800 bg-light p-6 rounded-lg">
+                <h3 className="text-xl font-bold mb-2 dark:text-white">3. Engaging Instruction</h3>
+                <p className="dark:text-gray-300 text-gray-600">Lessons are delivered using interactive and engaging methods that make learning enjoyable and effective.</p>
               </div>
               
-              <div className="bg-light p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-2">4. Regular Progress Monitoring</h3>
-                <p className="text-gray-600">We continuously assess progress and adjust teaching methods as needed to ensure optimal learning outcomes.</p>
+              <div className="dark:bg-[#1D1D1D] dark:border dark:border-gray-800 bg-light p-6 rounded-lg">
+                <h3 className="text-xl font-bold mb-2 dark:text-white">4. Regular Progress Monitoring</h3>
+                <p className="dark:text-gray-300 text-gray-600">We continuously assess progress and adjust teaching methods as needed to ensure optimal learning outcomes.</p>
               </div>
               
-              <div className="bg-light p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-2">5. Parent Communication</h3>
-                <p className="text-gray-600">Regular updates keep parents informed about their child's progress, achievements, and areas for continued focus.</p>
+              <div className="dark:bg-[#1D1D1D] dark:border dark:border-gray-800 bg-light p-6 rounded-lg">
+                <h3 className="text-xl font-bold mb-2 dark:text-white">5. Parent Communication</h3>
+                <p className="dark:text-gray-300 text-gray-600">Regular updates keep parents informed about their child's progress, achievements, and areas for continued focus.</p>
               </div>
             </motion.div>
           </div>
@@ -199,13 +199,13 @@ const TutoringMethodology = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
             className="flex justify-center"
           >
             <img 
-              src="/placeholder-methodology.jpg" 
-              alt="Our tutoring methodology" 
+              src="/placeholder-tutoring-methodology.jpg" 
+              alt="Tutoring methodology" 
               className="rounded-lg shadow-xl max-w-full h-auto"
             />
           </motion.div>
@@ -218,17 +218,17 @@ const TutoringMethodology = () => {
 // Call to Action Component
 const CallToAction = () => {
   return (
-    <section className="py-16 bg-primary text-white">
+    <section className="py-16 bg-primary text-[#111111]">
       <div className="container-custom text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Support Your Child's Academic Journey?</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Child's Learning Journey?</h2>
         <p className="text-xl mb-8 max-w-3xl mx-auto">
-          Our tutors are ready to provide the nurturing guidance and expert instruction your child needs to excel in their studies.
+          Our nurturing approach to education helps students build confidence, develop strong academic skills, and discover the joy of learning.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to="/contact" className="btn bg-white text-primary hover:bg-gray-100">
+          <Link to="/contact" className="btn bg-[#111111] text-primary hover:bg-[#222]">
             Schedule a Consultation
           </Link>
-          <Link to="/pricing" className="btn border border-white text-white hover:bg-white/10">
+          <Link to="/pricing" className="btn border border-[#111111] text-[#111111] hover:bg-[#111111]/10">
             View Tutoring Packages
           </Link>
         </div>
@@ -240,17 +240,17 @@ const CallToAction = () => {
 // Main TutoringPage Component
 const TutoringPage = () => {
   return (
-    <>
+    <div className="dark:bg-[#111111] bg-light">
       <PageHero 
-        title="K-12 Tutoring"
-        subtitle="Our comprehensive K-12 tutoring programs provide personalized support across all subjects, helping students build strong academic foundations with nurturing guidance."
-        accentText="Academic Excellence"
+        title="K-12 Tutoring Excellence"
+        subtitle="Personalized academic support for students of all ages, delivered with the nurturing care that defines Gehini Gurukul's educational approach"
+        accentText="Academic Growth"
       />
       <SubjectsOffered />
       <GradeLevels />
       <TutoringMethodology />
       <CallToAction />
-    </>
+    </div>
   );
 };
 

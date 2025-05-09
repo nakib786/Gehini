@@ -1,6 +1,9 @@
 import { Navbar1 } from '../blocks/navbar1';
+import { useTheme } from '../../contexts/ThemeContext';
 
 const Header = () => {
+  const { isDarkMode } = useTheme();
+
   return (
     <header className="bg-transparent z-50 absolute top-0 left-0 right-0 w-full">
       <Navbar1 
@@ -37,6 +40,7 @@ const Header = () => {
           login: { text: "Log in", url: "/login" },
           signup: { text: "Get Started", url: "/contact" },
         }}
+        isDarkMode={isDarkMode}
       />
     </header>
   );

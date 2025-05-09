@@ -376,21 +376,20 @@ const FormModal: React.FC<{
     return (
         <AnimatePresence>
             {isOpen && (
-                <>
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50"
-                        onClick={onClose}
-                    />
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center"
+                    onClick={onClose}
+                >
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
                         transition={{ duration: 0.3, type: "spring" }}
-                        className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-lg p-6 rounded-xl shadow-2xl bg-[#1a1a1a] border border-gray-700/50"
+                        className="relative w-full max-w-lg p-6 mx-4 rounded-xl shadow-2xl bg-[#1a1a1a] border border-gray-700/50 max-h-[90vh] overflow-y-auto"
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div className="flex justify-between items-center mb-5">
@@ -468,7 +467,7 @@ const FormModal: React.FC<{
                             </p>
                         </form>
                     </motion.div>
-                </>
+                </motion.div>
             )}
         </AnimatePresence>
     );
@@ -2172,7 +2171,7 @@ const InteractiveHero: React.FC = () => {
                 animate="visible"
                 className="text-xs text-gray-500 mb-10"
             >
-                Free consultancy
+                Click here for a free consultation
             </motion.p>
 
             <motion.div

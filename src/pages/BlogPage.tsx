@@ -12,8 +12,9 @@ const blogPosts = [
     category: "Education Philosophy",
     author: "Dr. Anjali Mehta",
     date: "May 15, 2025",
-    image: "/placeholder-blog-1.jpg",
-    readTime: "7 min read"
+    image: "/images/blog/education-philosophy.svg",
+    readTime: "7 min read",
+    path: "/blog/education-philosophy"
   },
   {
     id: 2,
@@ -22,8 +23,9 @@ const blogPosts = [
     category: "Study Tips",
     author: "Priya Sharma",
     date: "May 10, 2025",
-    image: "/placeholder-blog-2.jpg",
-    readTime: "5 min read"
+    image: "/images/blog/study-tips.svg",
+    readTime: "5 min read",
+    path: "/blog/study-tips"
   },
   {
     id: 3,
@@ -32,8 +34,9 @@ const blogPosts = [
     category: "Cybersecurity",
     author: "Prof. Vikram Singh",
     date: "May 5, 2025",
-    image: "/placeholder-blog-3.jpg",
-    readTime: "8 min read"
+    image: "/images/blog/cybersecurity.svg",
+    readTime: "8 min read",
+    path: "/blog/cybersecurity-guide"
   },
   {
     id: 4,
@@ -42,8 +45,9 @@ const blogPosts = [
     category: "Mathematics",
     author: "Priya Sharma",
     date: "April 28, 2025",
-    image: "/placeholder-blog-4.jpg",
-    readTime: "6 min read"
+    image: "/images/blog/mathematics.svg",
+    readTime: "6 min read",
+    path: "/blog/mathematics"
   },
   {
     id: 5,
@@ -52,8 +56,9 @@ const blogPosts = [
     category: "Literacy",
     author: "Dr. Anjali Mehta",
     date: "April 20, 2025",
-    image: "/placeholder-blog-5.jpg",
-    readTime: "5 min read"
+    image: "/images/blog/literacy.svg",
+    readTime: "5 min read",
+    path: "/blog/literacy"
   },
   {
     id: 6,
@@ -62,8 +67,9 @@ const blogPosts = [
     category: "Cybersecurity",
     author: "Prof. Vikram Singh",
     date: "April 15, 2025",
-    image: "/placeholder-blog-6.jpg",
-    readTime: "9 min read"
+    image: "/images/blog/cybersecurity.svg",
+    readTime: "9 min read",
+    path: "/blog/encryption-basics"
   },
   {
     id: 7,
@@ -72,8 +78,9 @@ const blogPosts = [
     category: "College Prep",
     author: "Raj Patel",
     date: "April 8, 2025",
-    image: "/placeholder-blog-7.jpg",
-    readTime: "10 min read"
+    image: "/images/blog/college-prep.svg",
+    readTime: "10 min read",
+    path: "/blog/college-prep"
   },
   {
     id: 8,
@@ -82,8 +89,9 @@ const blogPosts = [
     category: "Science",
     author: "Raj Patel",
     date: "April 1, 2025",
-    image: "/placeholder-blog-8.jpg",
-    readTime: "7 min read"
+    image: "/images/blog/science.svg",
+    readTime: "7 min read",
+    path: "/blog/science-experiments"
   }
 ];
 
@@ -112,7 +120,7 @@ const BlogPage = () => {
   });
 
   return (
-    <div className="bg-light">
+    <div className="dark:bg-[#111111] bg-light">
       <PageHero 
         title="Blog & Resources"
         subtitle="Educational insights, learning tips, and resources for parents and students"
@@ -132,12 +140,12 @@ const BlogPage = () => {
               <input
                 type="text"
                 placeholder="Search articles..."
-                className="w-full px-4 py-3 pl-10 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
+                className="w-full px-4 py-3 pl-10 dark:bg-[#222] dark:border-gray-700 dark:text-white border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
               <div className="absolute left-3 top-3.5">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 dark:text-gray-400 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
@@ -157,8 +165,8 @@ const BlogPage = () => {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-full text-sm font-medium ${
                   selectedCategory === category 
-                    ? 'bg-primary text-white' 
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
+                    ? 'bg-primary text-[#111111]' 
+                    : 'dark:bg-[#1D1D1D] dark:text-gray-300 bg-white text-gray-700 dark:hover:bg-[#333] hover:bg-gray-100'
                 }`}
               >
                 {category}
@@ -173,12 +181,12 @@ const BlogPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl shadow-md overflow-hidden mb-12"
+              className="dark:bg-[#1D1D1D] dark:border dark:border-gray-800 bg-white rounded-xl shadow-md overflow-hidden mb-12"
             >
               <div className="md:flex">
                 <div className="md:w-1/2">
                   <img 
-                    src="/placeholder-featured-blog.jpg" 
+                    src="/images/blog/featured-growth-mindset.svg" 
                     alt="Featured post" 
                     className="h-64 md:h-full w-full object-cover"
                   />
@@ -187,277 +195,142 @@ const BlogPage = () => {
                   <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium inline-block mb-4">
                     Featured Article
                   </span>
-                  <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                  <h2 className="text-2xl md:text-3xl font-bold mb-4 dark:text-white">
                     Fostering a Growth Mindset: How to Help Your Child Embrace Challenges
                   </h2>
-                  <p className="text-gray-600 mb-6">
+                  <p className="dark:text-gray-300 text-gray-600 mb-6">
                     Learn how to cultivate resilience and a love for learning by encouraging a growth mindset in your child's educational journey.
                   </p>
-                  <div className="flex items-center text-sm text-gray-500 mb-6">
+                  <div className="flex items-center text-sm dark:text-gray-400 text-gray-500 mb-6">
                     <img 
-                      src="/placeholder-avatar-anjali.jpg" 
+                      src="/images/avatars/placeholder-female.svg" 
                       alt="Dr. Anjali Mehta" 
                       className="h-10 w-10 rounded-full mr-3"
                     />
                     <div>
-                      <p className="font-medium text-gray-800">Dr. Anjali Mehta</p>
-                      <p>May 18, 2025 · 12 min read</p>
+                      <span className="dark:text-gray-300 text-gray-700 font-medium">Dr. Anjali Mehta</span>
+                      <span className="mx-2">•</span>
+                      <span>June 1, 2025</span>
+                      <span className="mx-2">•</span>
+                      <span>12 min read</span>
                     </div>
                   </div>
-                  <Link to="/blog/featured" className="btn btn-primary self-start">
-                    Read Article
+                  <Link to="/blog/education-philosophy" className="text-primary font-medium hover:underline inline-flex items-center">
+                    Read full article
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
                   </Link>
                 </div>
               </div>
             </motion.div>
           )}
-        </div>
-      </section>
 
-      {/* Blog Posts Grid */}
-      <section className="pb-16 md:pb-24">
-        <div className="container-custom">
-          {filteredPosts.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredPosts.map((post, index) => (
-                <motion.div
-                  key={post.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-white rounded-xl shadow-md overflow-hidden"
-                >
-                  <img 
-                    src={post.image} 
-                    alt={post.title} 
-                    className="h-48 w-full object-cover"
-                  />
-                  <div className="p-6">
-                    <div className="flex justify-between items-center mb-3">
-                      <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">
-                        {post.category}
-                      </span>
-                      <span className="text-xs text-gray-500">{post.readTime}</span>
-                    </div>
-                    <h3 className="text-xl font-bold mb-2">
-                      <Link to={`/blog/${post.id}`} className="hover:text-primary transition-colors">
-                        {post.title}
-                      </Link>
-                    </h3>
-                    <p className="text-gray-600 mb-4 line-clamp-3">
-                      {post.excerpt}
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center text-sm text-gray-500">
-                        <span className="font-medium">{post.author}</span>
-                        <span className="mx-1">·</span>
-                        <span>{post.date}</span>
-                      </div>
-                      <Link to={`/blog/${post.id}`} className="text-primary font-medium hover:underline text-sm">
-                        Read more →
-                      </Link>
-                    </div>
+          {/* Blog Posts Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredPosts.map((post, index) => (
+              <motion.div
+                key={post.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="dark:bg-[#1D1D1D] dark:border dark:border-gray-800 bg-white rounded-xl shadow-md overflow-hidden h-full flex flex-col"
+              >
+                <img 
+                  src={post.image} 
+                  alt={post.title} 
+                  className="h-48 w-full object-cover"
+                />
+                <div className="p-6 flex-grow">
+                  <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium inline-block mb-3">
+                    {post.category}
+                  </span>
+                  <h3 className="text-xl font-bold mb-3 dark:text-white">
+                    {post.title}
+                  </h3>
+                  <p className="dark:text-gray-300 text-gray-600 mb-4">
+                    {post.excerpt}
+                  </p>
+                </div>
+                <div className="px-6 pb-6">
+                  <div className="flex items-center text-sm dark:text-gray-400 text-gray-500 mb-4">
+                    <span className="dark:text-gray-300 text-gray-700 font-medium">{post.author}</span>
+                    <span className="mx-2">•</span>
+                    <span>{post.date}</span>
+                    <span className="mx-2">•</span>
+                    <span>{post.readTime}</span>
                   </div>
-                </motion.div>
-              ))}
-            </div>
-          ) : (
+                  <Link to={post.path} className="text-primary font-medium hover:underline inline-flex items-center">
+                    Read more
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* No Results Message */}
+          {filteredPosts.length === 0 && (
             <div className="text-center py-12">
-              <div className="text-5xl text-gray-300 mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-24 w-24 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold mb-2">No articles found</h3>
-              <p className="text-gray-600 mb-6">
-                We couldn't find any articles matching your search criteria.
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-gray-300 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <h3 className="text-xl font-bold mb-2 dark:text-white">No articles found</h3>
+              <p className="dark:text-gray-300 text-gray-600">
+                We couldn't find any articles matching your search criteria. Please try a different search term or category.
               </p>
               <button
                 onClick={() => {
                   setSelectedCategory("All");
                   setSearchQuery("");
                 }}
-                className="btn btn-primary"
+                className="mt-4 text-primary font-medium hover:underline"
               >
-                Clear Filters
+                View all articles
               </button>
             </div>
           )}
         </div>
       </section>
 
-      {/* Newsletter Subscription */}
-      <section className="py-16 bg-primary text-white">
-        <div className="container-custom">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Stay Updated</h2>
-            <p className="text-xl mb-8">
-              Subscribe to our newsletter for the latest educational resources, tips, and insights.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="flex-grow px-4 py-3 rounded-md border-none focus:ring-2 focus:ring-white/50 text-gray-800"
-              />
-              <button className="btn bg-white text-primary hover:bg-gray-100 whitespace-nowrap">
-                Subscribe
-              </button>
+      {/* Newsletter Section */}
+      <section className="py-16 dark:bg-[#131313] bg-white">
+        <div className="container-custom max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="dark:bg-[#1D1D1D] dark:border dark:border-gray-800 bg-light p-8 md:p-12 rounded-xl shadow-md text-center"
+          >
+            <div className="mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-primary mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
             </div>
-            <p className="text-sm mt-4 text-white/80">
-              We respect your privacy. Unsubscribe at any time.
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 dark:text-white">Subscribe to Our Newsletter</h2>
+            <p className="dark:text-gray-300 text-gray-600 mb-6 max-w-2xl mx-auto">
+              Get the latest educational insights, learning tips, and resources delivered directly to your inbox. We promise not to spam you!
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Resources Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Educational Resources</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Practical tools and materials to support learning at home and beyond
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Resource Category 1 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="bg-light p-8 rounded-xl shadow-md"
-            >
-              <div className="text-4xl text-primary mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                </svg>
+            <div className="max-w-md mx-auto">
+              <div className="flex flex-col sm:flex-row gap-2">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  className="w-full px-4 py-3 dark:bg-[#222] dark:border-gray-700 dark:text-white border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
+                />
+                <button className="btn btn-primary px-6 whitespace-nowrap">
+                  Subscribe
+                </button>
               </div>
-              <h3 className="text-xl font-bold mb-3">Study Guides</h3>
-              <p className="text-gray-600 mb-4">
-                Comprehensive study materials for various subjects and grade levels to help with exam preparation.
+              <p className="text-xs dark:text-gray-400 text-gray-500 mt-3">
+                By subscribing, you agree to our Privacy Policy and consent to receive updates from us.
               </p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-center">
-                  <svg className="h-5 w-5 text-secondary mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700">Math Formula Sheets</span>
-                </li>
-                <li className="flex items-center">
-                  <svg className="h-5 w-5 text-secondary mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700">Science Quick References</span>
-                </li>
-                <li className="flex items-center">
-                  <svg className="h-5 w-5 text-secondary mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700">Literature Analysis Templates</span>
-                </li>
-              </ul>
-              <Link to="/resources/study-guides" className="text-primary font-medium hover:underline inline-flex items-center">
-                Browse Study Guides
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </motion.div>
-
-            {/* Resource Category 2 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="bg-light p-8 rounded-xl shadow-md"
-            >
-              <div className="text-4xl text-primary mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Worksheets & Activities</h3>
-              <p className="text-gray-600 mb-4">
-                Printable worksheets and engaging activities to reinforce learning concepts in a fun, interactive way.
-              </p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-center">
-                  <svg className="h-5 w-5 text-secondary mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700">Math Problem Sets</span>
-                </li>
-                <li className="flex items-center">
-                  <svg className="h-5 w-5 text-secondary mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700">Reading Comprehension Exercises</span>
-                </li>
-                <li className="flex items-center">
-                  <svg className="h-5 w-5 text-secondary mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700">Science Experiment Guides</span>
-                </li>
-              </ul>
-              <Link to="/resources/worksheets" className="text-primary font-medium hover:underline inline-flex items-center">
-                Download Worksheets
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </motion.div>
-
-            {/* Resource Category 3 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="bg-light p-8 rounded-xl shadow-md"
-            >
-              <div className="text-4xl text-primary mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Educational Videos</h3>
-              <p className="text-gray-600 mb-4">
-                Visual learning resources explaining complex concepts in simple, accessible ways for different grade levels.
-              </p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-center">
-                  <svg className="h-5 w-5 text-secondary mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700">Math Concept Explanations</span>
-                </li>
-                <li className="flex items-center">
-                  <svg className="h-5 w-5 text-secondary mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700">Historical Event Breakdowns</span>
-                </li>
-                <li className="flex items-center">
-                  <svg className="h-5 w-5 text-secondary mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700">Science Demonstrations</span>
-                </li>
-              </ul>
-              <Link to="/resources/videos" className="text-primary font-medium hover:underline inline-flex items-center">
-                Watch Videos
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>

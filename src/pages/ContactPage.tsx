@@ -44,7 +44,7 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="bg-light">
+    <div className="dark:bg-[#111111] bg-light">
       <PageHero 
         title="Contact & Registration"
         subtitle="Reach out to us for inquiries or to begin your educational journey with Gehini Gurukul"
@@ -60,19 +60,19 @@ const ContactPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-white p-8 rounded-xl shadow-md"
+              className="dark:bg-[#1D1D1D] dark:border dark:border-gray-800 bg-white p-8 rounded-xl shadow-md"
             >
-              <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
+              <h2 className="text-2xl font-bold mb-6 dark:text-white">Send Us a Message</h2>
               
               {isSubmitted ? (
                 <div className="text-center py-8">
-                  <div className="text-5xl text-secondary mb-4">
+                  <div className="text-5xl text-primary mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-20 w-20 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
-                  <p className="text-gray-600 mb-6">
+                  <h3 className="text-2xl font-bold mb-2 dark:text-white">Thank You!</h3>
+                  <p className="dark:text-gray-300 text-gray-600 mb-6">
                     Your message has been received. We'll get back to you as soon as possible.
                   </p>
                   <button
@@ -86,7 +86,7 @@ const ContactPage = () => {
                 <form onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
-                      <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="firstName" className="block text-sm font-medium dark:text-gray-300 text-gray-700 mb-1">
                         First Name *
                       </label>
                       <input
@@ -96,11 +96,11 @@ const ContactPage = () => {
                         value={formData.firstName}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
+                        className="w-full px-4 py-2 dark:bg-[#222] dark:border-gray-700 dark:text-white border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
                       />
                     </div>
                     <div>
-                      <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="lastName" className="block text-sm font-medium dark:text-gray-300 text-gray-700 mb-1">
                         Last Name *
                       </label>
                       <input
@@ -110,13 +110,13 @@ const ContactPage = () => {
                         value={formData.lastName}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
+                        className="w-full px-4 py-2 dark:bg-[#222] dark:border-gray-700 dark:text-white border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
                       />
                     </div>
                   </div>
                   
                   <div className="mb-6">
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="email" className="block text-sm font-medium dark:text-gray-300 text-gray-700 mb-1">
                       Email Address *
                     </label>
                     <input
@@ -126,12 +126,12 @@ const ContactPage = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
+                      className="w-full px-4 py-2 dark:bg-[#222] dark:border-gray-700 dark:text-white border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
                     />
                   </div>
                   
                   <div className="mb-6">
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="phone" className="block text-sm font-medium dark:text-gray-300 text-gray-700 mb-1">
                       Phone Number
                     </label>
                     <input
@@ -140,12 +140,12 @@ const ContactPage = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
+                      className="w-full px-4 py-2 dark:bg-[#222] dark:border-gray-700 dark:text-white border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
                     />
                   </div>
                   
                   <div className="mb-6">
-                    <label htmlFor="interestedIn" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="interestedIn" className="block text-sm font-medium dark:text-gray-300 text-gray-700 mb-1">
                       I'm Interested In *
                     </label>
                     <select
@@ -154,7 +154,7 @@ const ContactPage = () => {
                       value={formData.interestedIn}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
+                      className="w-full px-4 py-2 dark:bg-[#222] dark:border-gray-700 dark:text-white border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
                     >
                       <option value="">Please select</option>
                       <option value="K-12 Elementary Tutoring">K-12 Elementary Tutoring</option>
@@ -170,7 +170,7 @@ const ContactPage = () => {
                   </div>
                   
                   <div className="mb-6">
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="message" className="block text-sm font-medium dark:text-gray-300 text-gray-700 mb-1">
                       Message
                     </label>
                     <textarea
@@ -179,7 +179,7 @@ const ContactPage = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows={4}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
+                      className="w-full px-4 py-2 dark:bg-[#222] dark:border-gray-700 dark:text-white border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
                       placeholder="Please provide any additional details that might help us better understand your needs."
                     ></textarea>
                   </div>
@@ -191,7 +191,7 @@ const ContactPage = () => {
                   >
                     {isSubmitting ? (
                       <span className="flex items-center">
-                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-[#111111]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
                         </svg>
@@ -212,8 +212,8 @@ const ContactPage = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="space-y-8"
             >
-              <div className="bg-white p-8 rounded-xl shadow-md">
-                <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
+              <div className="dark:bg-[#1D1D1D] dark:border dark:border-gray-800 bg-white p-8 rounded-xl shadow-md">
+                <h2 className="text-2xl font-bold mb-6 dark:text-white">Contact Information</h2>
                 <div className="space-y-4">
                   <div className="flex items-start">
                     <div className="bg-primary/10 p-2 rounded-full mr-4">
@@ -223,8 +223,8 @@ const ContactPage = () => {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold mb-1">Address</h3>
-                      <p className="text-gray-600">
+                      <h3 className="text-lg font-semibold mb-1 dark:text-white">Address</h3>
+                      <p className="dark:text-gray-300 text-gray-600">
                         123 Education Lane<br />
                         Learning City, LC 12345<br />
                         United States
@@ -239,8 +239,8 @@ const ContactPage = () => {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold mb-1">Phone</h3>
-                      <p className="text-gray-600">
+                      <h3 className="text-lg font-semibold mb-1 dark:text-white">Phone</h3>
+                      <p className="dark:text-gray-300 text-gray-600">
                         Main: (555) 123-4567<br />
                         Support: (555) 987-6543
                       </p>
@@ -254,8 +254,8 @@ const ContactPage = () => {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold mb-1">Email</h3>
-                      <p className="text-gray-600">
+                      <h3 className="text-lg font-semibold mb-1 dark:text-white">Email</h3>
+                      <p className="dark:text-gray-300 text-gray-600">
                         General: info@gehinigurukul.com<br />
                         Support: support@gehinigurukul.com
                       </p>
@@ -269,8 +269,8 @@ const ContactPage = () => {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold mb-1">Hours of Operation</h3>
-                      <p className="text-gray-600">
+                      <h3 className="text-lg font-semibold mb-1 dark:text-white">Hours of Operation</h3>
+                      <p className="dark:text-gray-300 text-gray-600">
                         Monday - Friday: 8:00 AM - 8:00 PM<br />
                         Saturday: 9:00 AM - 5:00 PM<br />
                         Sunday: Closed
@@ -280,9 +280,9 @@ const ContactPage = () => {
                 </div>
               </div>
               
-              <div className="bg-white p-8 rounded-xl shadow-md">
-                <h2 className="text-2xl font-bold mb-6">Connect With Us</h2>
-                <p className="text-gray-600 mb-6">
+              <div className="dark:bg-[#1D1D1D] dark:border dark:border-gray-800 bg-white p-8 rounded-xl shadow-md">
+                <h2 className="text-2xl font-bold mb-6 dark:text-white">Connect With Us</h2>
+                <p className="dark:text-gray-300 text-gray-600 mb-6">
                   Follow us on social media for educational tips, student success stories, and updates about our programs.
                 </p>
                 <div className="flex space-x-4">
@@ -320,12 +320,12 @@ const ContactPage = () => {
       {/* Map Section */}
       <section className="pb-16 md:pb-24">
         <div className="container-custom">
-          <div className="bg-white p-8 rounded-xl shadow-md">
-            <h2 className="text-2xl font-bold mb-6">Visit Our Center</h2>
+          <div className="dark:bg-[#1D1D1D] dark:border dark:border-gray-800 bg-white p-8 rounded-xl shadow-md">
+            <h2 className="text-2xl font-bold mb-6 dark:text-white">Visit Our Center</h2>
             <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
               {/* Placeholder for a map */}
-              <div className="w-full h-96 bg-gray-200 flex items-center justify-center">
-                <p className="text-gray-500">Interactive Map Would Be Embedded Here</p>
+              <div className="w-full h-96 dark:bg-[#222] bg-gray-200 flex items-center justify-center">
+                <p className="dark:text-gray-400 text-gray-500">Interactive Map Would Be Embedded Here</p>
               </div>
             </div>
           </div>

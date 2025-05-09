@@ -54,6 +54,7 @@ interface Navbar1Props {
       url: string;
     };
   };
+  isDarkMode?: boolean;
 }
 
 const Navbar1 = ({
@@ -145,15 +146,30 @@ const Navbar1 = ({
     login: { text: "Log in", url: "/login" },
     signup: { text: "Sign up", url: "/signup" },
   },
+  isDarkMode = true,
 }: Navbar1Props) => {
   return (
     <section className="py-4 px-4">
-      <div className="max-w-7xl mx-auto bg-transparent backdrop-blur-sm rounded-xl shadow-lg px-6 py-3 border border-[#0CF2A0]/50 shadow-[0_0_15px_rgba(12,242,160,0.3)] text-white">
-        <nav className="hidden justify-between lg:flex">
-          <div className="flex items-center gap-6">
-            <a href={logo.url} className="flex items-center gap-2">
-              <img src={logo.src} className="w-8" alt={logo.alt} />
-              <span className="text-lg font-semibold text-white">{logo.title}</span>
+      <div className="max-w-4xl mx-auto bg-transparent backdrop-blur-sm rounded-xl shadow-lg px-6 py-4 border border-[#0CF2A0]/50 shadow-[0_0_15px_rgba(12,242,160,0.3)] text-white group hover:border-[#0CF2A0] transition-all duration-300">
+        <nav className="hidden lg:flex justify-center">
+          <div className="flex items-center gap-8">
+            <a href={logo.url} className="flex items-center gap-3 relative">
+              <div className="relative">
+                <img 
+                  src={logo.src} 
+                  className="w-10 transition-all duration-300 relative z-10" 
+                  alt={logo.alt} 
+                />
+                <img 
+                  src={logo.src} 
+                  className="absolute top-0 left-0 w-10 opacity-0 group-hover:opacity-100 group-hover:scale-[3] group-hover:-translate-x-8 group-hover:rotate-3 group-hover:brightness-125 group-hover:z-50 transition-all duration-500 origin-center transform drop-shadow-xl filter bg-transparent" 
+                  alt={logo.alt} 
+                  style={{
+                    filter: "drop-shadow(0 0 15px rgba(12,242,160,0.5))",
+                  }}
+                />
+              </div>
+              <span className="text-xl font-semibold text-white group-hover:text-[#0CF2A0] transition-colors duration-300">{logo.title}</span>
             </a>
             <div className="flex items-center">
               <NavigationMenu>
@@ -163,20 +179,26 @@ const Navbar1 = ({
               </NavigationMenu>
             </div>
           </div>
-          <div className="flex gap-2">
-            <Button asChild variant="outline" size="sm" className="rounded-full bg-transparent hover:bg-transparent/20 border-white/30">
-              <a href={auth.login.url}>{auth.login.text}</a>
-            </Button>
-            <Button asChild size="sm" className="rounded-full bg-primary/70 hover:bg-primary">
-              <a href={auth.signup.url}>{auth.signup.text}</a>
-            </Button>
-          </div>
         </nav>
         <div className="block lg:hidden">
           <div className="flex items-center justify-between">
-            <a href={logo.url} className="flex items-center gap-2">
-              <img src={logo.src} className="w-8" alt={logo.alt} />
-              <span className="text-lg font-semibold text-white">{logo.title}</span>
+            <a href={logo.url} className="flex items-center gap-2 relative">
+              <div className="relative">
+                <img 
+                  src={logo.src} 
+                  className="w-8 transition-all duration-300 relative z-10" 
+                  alt={logo.alt} 
+                />
+                <img 
+                  src={logo.src} 
+                  className="absolute top-0 left-0 w-8 opacity-0 hover:opacity-100 hover:scale-[3] hover:-translate-x-8 hover:rotate-3 hover:brightness-125 hover:z-50 transition-all duration-500 origin-center transform bg-transparent" 
+                  alt={logo.alt} 
+                  style={{
+                    filter: "drop-shadow(0 0 15px rgba(12,242,160,0.5))",
+                  }}
+                />
+              </div>
+              <span className="text-lg font-semibold text-white hover:text-[#0CF2A0] transition-colors duration-300">{logo.title}</span>
             </a>
             <Sheet>
               <SheetTrigger asChild>
@@ -216,14 +238,6 @@ const Navbar1 = ({
                       ))}
                     </div>
                   </div>
-                  <div className="flex flex-col gap-3">
-                    <Button asChild variant="outline" className="rounded-full bg-transparent hover:bg-transparent/20 border-white/30">
-                      <a href={auth.login.url}>{auth.login.text}</a>
-                    </Button>
-                    <Button asChild className="rounded-full bg-primary/70 hover:bg-primary">
-                      <a href={auth.signup.url}>{auth.signup.text}</a>
-                    </Button>
-                  </div>
                 </div>
               </SheetContent>
             </Sheet>
@@ -238,7 +252,7 @@ const renderMenuItem = (item: MenuItem) => {
   if (item.items) {
     return (
       <NavigationMenuItem key={item.title} className="text-white">
-        <NavigationMenuTrigger className="font-medium text-white">{item.title}</NavigationMenuTrigger>
+        <NavigationMenuTrigger className="font-medium text-white text-base">{item.title}</NavigationMenuTrigger>
         <NavigationMenuContent>
           <ul className="w-80 p-3">
             <NavigationMenuLink>
@@ -272,7 +286,7 @@ const renderMenuItem = (item: MenuItem) => {
   return (
     <a
       key={item.title}
-      className="group inline-flex h-9 items-center justify-center rounded-full px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#0CF2A0]/10 hover:text-[#0CF2A0]"
+      className="group inline-flex h-10 items-center justify-center rounded-full px-5 py-3 text-base font-medium text-white transition-colors hover:bg-[#0CF2A0]/10 hover:text-[#0CF2A0]"
       href={item.url}
     >
       {item.title}
