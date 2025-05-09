@@ -6,7 +6,7 @@ const Header = () => {
       <Navbar1 
         logo={{
           url: "/",
-          src: "/src/assets/Gehini_Gurukul_Logo-removebg-preview.png",
+          src: "/Gehini_Gurukul_Logo-removebg-preview.png",
           alt: "Gehini Gurukul Logo",
           title: "Gehini Gurukul"
         }}

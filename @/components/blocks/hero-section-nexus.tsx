@@ -2102,7 +2102,7 @@ const InteractiveHero: React.FC = () => {
     };
 
   return (
-    <div className="pt-[100px] relative bg-[#111111] text-gray-300 min-h-screen flex flex-col overflow-x-hidden">
+    <div className="pt-[100px] relative bg-[#111111] text-gray-300 min-h-screen flex flex-col overflow-hidden">
         <canvas ref={canvasRef} className="absolute inset-0 z-0 pointer-events-none opacity-80" />
         <div className="absolute inset-0 z-1 pointer-events-none" style={{
             background: 'linear-gradient(to bottom, transparent 0%, #111111 90%), radial-gradient(ellipse at center, transparent 40%, #111111 95%)'
@@ -2195,7 +2195,7 @@ const InteractiveHero: React.FC = () => {
                 variants={imageVariants}
                 initial="hidden"
                 animate="visible"
-                className="w-full max-w-4xl mx-auto px-4 sm:px-0"
+                className="w-full max-w-4xl mx-auto px-4 sm:px-0 overflow-hidden"
             >
                 <SmartBoardAnimation />
             </motion.div>
