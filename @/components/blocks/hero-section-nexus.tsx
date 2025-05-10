@@ -1798,69 +1798,10 @@ service of others."
                         )}
                     </div>
                     
-                    <div className="flex gap-2 justify-between">
-                        <motion.button
-                            className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-700/50"
-                            onClick={handleUndo}
-                            disabled={historyIndex < 0}
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            <UndoIcon />
-                        </motion.button>
-                        
-                        <motion.button
-                            className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-700/50"
-                            onClick={handleRedo}
-                            disabled={historyIndex >= drawingHistory.length - 1}
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            <RedoIcon />
-                        </motion.button>
-                        
-                        <motion.button
-                            className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-700/50"
-                            onClick={clearCanvas}
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            <TrashIcon />
-                        </motion.button>
-                    </div>
+                    {/* Removed the buttons as requested */}
                 </div>
                 
-                {/* Mobile-only floating action buttons */}
-                <div className="sm:hidden absolute bottom-4 right-4 flex gap-2 bg-gray-900/70 backdrop-blur-sm p-2 rounded-lg border border-gray-700/50">
-                    <motion.button
-                        className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-700/50"
-                        onClick={handleUndo}
-                        disabled={historyIndex < 0}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        <UndoIcon />
-                    </motion.button>
-                    
-                    <motion.button
-                        className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-700/50"
-                        onClick={handleRedo}
-                        disabled={historyIndex >= drawingHistory.length - 1}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        <RedoIcon />
-                    </motion.button>
-                    
-                    <motion.button
-                        className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-700/50"
-                        onClick={clearCanvas}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        <TrashIcon />
-                    </motion.button>
-                </div>
+                {/* Removed mobile-only floating action buttons as requested */}
             </div>
             <style dangerouslySetInnerHTML={{ __html: `
                 .code-scrollbar::-webkit-scrollbar {
