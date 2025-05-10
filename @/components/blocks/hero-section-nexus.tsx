@@ -1055,32 +1055,34 @@ service of others."
                         onTouchEnd={stopDrawing}
                     />
                     
-                    {/* Educational Topic Blocks */}
-                    <div className="absolute top-4 left-4 right-4 flex flex-wrap gap-3 z-10">
-                        {topics.map((topic) => (
-                            <motion.div
-                                key={topic.id}
-                                className={`px-3 py-2 rounded-lg ${activeTopic === topic.id ? 'bg-white text-gray-800' : 'bg-gray-800/70 hover:bg-gray-700/80 text-white'} cursor-pointer flex items-center gap-2`}
-                                onClick={() => handleTopicSelect(topic.id)}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                <span style={{ color: topic.color }} className="text-xl">{topic.icon}</span>
-                                <span className="text-sm font-medium">{topic.title}</span>
-                            </motion.div>
-                        ))}
+                    {/* Educational Topic Blocks with improved responsive layout */}
+                    <div className="absolute top-4 left-4 right-4 flex flex-wrap gap-2 sm:gap-3 z-10">
+                        <div className="w-full grid grid-cols-4 sm:grid-cols-6 md:flex md:flex-wrap gap-2 sm:gap-3">
+                            {topics.map((topic) => (
+                                <motion.div
+                                    key={topic.id}
+                                    className={`py-1 px-2 sm:px-3 sm:py-2 rounded-lg ${activeTopic === topic.id ? 'bg-white text-gray-800' : 'bg-gray-800/70 hover:bg-gray-700/80 text-white'} cursor-pointer flex items-center gap-1 sm:gap-2 justify-center`}
+                                    onClick={() => handleTopicSelect(topic.id)}
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                >
+                                    <span style={{ color: topic.color }} className="text-lg sm:text-xl">{topic.icon}</span>
+                                    <span className="hidden sm:inline text-sm font-medium truncate">{topic.title}</span>
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
                     
                     {/* Animated Math Formula */}
                     {showMathFormula && (
                         <motion.div 
-                            className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 bg-gray-900/80 backdrop-blur-sm p-4 rounded-xl border border-pink-500/50 shadow-lg"
+                            className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 bg-gray-900/80 backdrop-blur-sm p-4 rounded-xl border border-pink-500/50 shadow-lg max-w-[90%] sm:max-w-md"
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.8 }}
                             transition={{ type: "spring", bounce: 0.4 }}
                         >
-                            <div className="text-white text-lg font-mono">
+                            <div className="text-white text-sm sm:text-lg font-mono overflow-x-auto">
                                 {mathFormula.split('').map((char, i) => (
                                     <motion.span
                                         key={i}
@@ -1095,16 +1097,16 @@ service of others."
                         </motion.div>
                     )}
                     
-                    {/* Animated Coding Snippet */}
+                    {/* Animated Coding Snippet with mobile optimization */}
                     {showCodingSnippet && (
                         <motion.div 
-                            className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 bg-gray-900/80 backdrop-blur-sm p-4 rounded-xl border border-blue-500/50 shadow-lg max-w-md"
+                            className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 bg-gray-900/80 backdrop-blur-sm p-3 sm:p-4 rounded-xl border border-blue-500/50 shadow-lg max-w-[90%] sm:max-w-md"
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.8 }}
                             transition={{ type: "spring", bounce: 0.4 }}
                         >
-                            <div className="text-white text-sm font-mono whitespace-pre overflow-x-auto code-scrollbar">
+                            <div className="text-white text-xs sm:text-sm font-mono whitespace-pre overflow-x-auto code-scrollbar">
                                 {codingSnippet.split('').map((char, i) => (
                                     <motion.span
                                         key={i}
@@ -1231,16 +1233,16 @@ service of others."
                         </motion.div>
                     )}
                     
-                    {/* Regional Language Content */}
+                    {/* Regional Language Content with improved mobile display */}
                     {showRegionalContent && (
                         <motion.div 
-                            className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 bg-gray-900/80 backdrop-blur-sm p-4 rounded-xl border border-[#F43F5E]/50 shadow-lg"
+                            className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 bg-gray-900/80 backdrop-blur-sm p-3 sm:p-4 rounded-xl border border-[#F43F5E]/50 shadow-lg max-w-[90%] sm:max-w-md"
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.8 }}
                             transition={{ type: "spring", bounce: 0.4 }}
                         >
-                            <div className="text-white text-sm font-medium max-w-md">
+                            <div className="text-white text-xs sm:text-sm font-medium max-w-md">
                                 {regionalContent.split('\n').map((line: string, lineIndex: number) => (
                                     <div key={lineIndex} className={lineIndex === 0 ? "text-[#F43F5E] font-bold mb-2" : "ml-2"}>
                                         {line.split('').map((char: string, i: number) => (
@@ -1568,18 +1570,18 @@ service of others."
                         </motion.div>
                     )}
                     
-                    {/* Topic content box */}
+                    {/* Topic content box with better mobile display */}
                     {activeTopic && (
                         <motion.div 
-                            className="absolute bottom-4 left-4 right-4 bg-gray-900/70 backdrop-blur-sm p-4 rounded-lg border border-gray-700/50"
+                            className="absolute bottom-4 left-4 right-4 bg-gray-900/70 backdrop-blur-sm p-3 sm:p-4 rounded-lg border border-gray-700/50"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 20 }}
                         >
-                            <h3 className="text-lg font-semibold mb-2" style={{ color: topics.find(t => t.id === activeTopic)?.color }}>
+                            <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2" style={{ color: topics.find(t => t.id === activeTopic)?.color }}>
                                 {topics.find(t => t.id === activeTopic)?.title}
                             </h3>
-                            <p className="text-gray-300 text-sm">
+                            <p className="text-gray-300 text-xs sm:text-sm">
                                 {topics.find(t => t.id === activeTopic)?.content}
                             </p>
                         </motion.div>
@@ -1594,17 +1596,17 @@ service of others."
                             exit={{ opacity: 0 }}
                         >
                             <motion.div 
-                                className="bg-gray-900 p-6 rounded-xl max-w-md text-center border border-[#0CF2A0]/50"
+                                className="bg-gray-900 p-4 sm:p-6 rounded-xl max-w-[90%] sm:max-w-md text-center border border-[#0CF2A0]/50"
                                 initial={{ scale: 0.9 }}
                                 animate={{ scale: 1 }}
                                 transition={{ type: "spring", bounce: 0.4 }}
                             >
-                                <h3 className="text-[#0CF2A0] text-xl font-bold mb-4">Welcome to the Interactive Smart Board</h3>
-                                <p className="text-gray-300 mb-4">
+                                <h3 className="text-[#0CF2A0] text-lg sm:text-xl font-bold mb-3 sm:mb-4">Welcome to the Interactive Smart Board</h3>
+                                <p className="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">
                                     Explore our educational content by clicking the topic buttons at the top.
                                     Use the drawing tools to interact with the board.
                                 </p>
-                                <ul className="text-left text-gray-300 mb-4 space-y-2">
+                                <ul className="text-left text-gray-300 mb-4 space-y-2 text-xs sm:text-sm">
                                     <li className="flex items-center gap-2">
                                         <span className="bg-gray-800 p-1 rounded"><PointerIcon /></span>
                                         <span>Select and interact with content</span>
@@ -1619,7 +1621,7 @@ service of others."
                                     </li>
                                 </ul>
                                 <motion.button
-                                    className="bg-[#0CF2A0] text-gray-900 px-4 py-2 rounded-lg font-medium"
+                                    className="bg-[#0CF2A0] text-gray-900 px-4 py-2 rounded-lg font-medium text-sm sm:text-base"
                                     onClick={() => setShowTutorial(false)}
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
@@ -1631,8 +1633,8 @@ service of others."
                     )}
                 </div>
                 
-                {/* Topic Information Panel */}
-                <div className="w-64 bg-[#1B2B3A] border-l border-gray-700/50 flex flex-col p-3">
+                {/* Topic Information Panel with mobile optimization - hidden on mobile */}
+                <div className="hidden sm:flex w-64 bg-[#1B2B3A] border-l border-gray-700/50 flex-col p-3">
                     <h3 className="text-white font-medium mb-2 text-sm">
                         {activeTopic ? `${topics.find(t => t.id === activeTopic)?.title} Information` : 'Subject Information'}
                     </h3>
@@ -1827,6 +1829,38 @@ service of others."
                         </motion.button>
                     </div>
                 </div>
+                
+                {/* Mobile-only floating action buttons */}
+                <div className="sm:hidden absolute bottom-4 right-4 flex gap-2 bg-gray-900/70 backdrop-blur-sm p-2 rounded-lg border border-gray-700/50">
+                    <motion.button
+                        className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-700/50"
+                        onClick={handleUndo}
+                        disabled={historyIndex < 0}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        <UndoIcon />
+                    </motion.button>
+                    
+                    <motion.button
+                        className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-700/50"
+                        onClick={handleRedo}
+                        disabled={historyIndex >= drawingHistory.length - 1}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        <RedoIcon />
+                    </motion.button>
+                    
+                    <motion.button
+                        className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-700/50"
+                        onClick={clearCanvas}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        <TrashIcon />
+                    </motion.button>
+                </div>
             </div>
             <style dangerouslySetInnerHTML={{ __html: `
                 .code-scrollbar::-webkit-scrollbar {
@@ -1840,6 +1874,11 @@ service of others."
                 .code-scrollbar::-webkit-scrollbar-track {
                     background-color: transparent;
                 }
+                @media (max-width: 640px) {
+                    .code-scrollbar {
+                        font-size: 10px;
+                    }
+                }
             `}} />
         </div>
     );
@@ -1851,6 +1890,7 @@ const InteractiveHero: React.FC = () => {
    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
    const [isScrolled, setIsScrolled] = useState<boolean>(false);
    const [isModalOpen, setIsModalOpen] = useState(false);
+   const [isMobile, setIsMobile] = useState<boolean>(false);
 
    const { scrollY } = useScroll();
    useMotionValueEvent(scrollY, "change", (latest) => {
@@ -1862,41 +1902,95 @@ const InteractiveHero: React.FC = () => {
    const canvasSizeRef = useRef<{ width: number; height: number }>({ width: 0, height: 0 });
    const mousePositionRef = useRef<{ x: number | null; y: number | null }>({ x: null, y: null });
 
-   const DOT_SPACING = 25;
-   const BASE_OPACITY_MIN = 0.40;
-   const BASE_OPACITY_MAX = 0.50;
-   const BASE_RADIUS = 1;
-   const INTERACTION_RADIUS = 150;
-   const INTERACTION_RADIUS_SQ = INTERACTION_RADIUS * INTERACTION_RADIUS;
-   const OPACITY_BOOST = 0.6;
-   const RADIUS_BOOST = 2.5;
-   const GRID_CELL_SIZE = Math.max(50, Math.floor(INTERACTION_RADIUS / 1.5));
+   // Adjust spacing and parameters for mobile
+   const getResponsiveValues = useCallback(() => {
+     if (isMobile) {
+       return {
+         dotSpacing: 35,
+         baseOpacityMin: 0.35,
+         baseOpacityMax: 0.45,
+         baseRadius: 1,
+         interactionRadius: 100,
+         opacityBoost: 0.5,
+         radiusBoost: 2,
+         gridCellSize: 50
+       };
+     }
+     return {
+       dotSpacing: 25,
+       baseOpacityMin: 0.40,
+       baseOpacityMax: 0.50,
+       baseRadius: 1,
+       interactionRadius: 150,
+       opacityBoost: 0.6,
+       radiusBoost: 2.5,
+       gridCellSize: Math.max(50, Math.floor(150 / 1.5))
+     };
+   }, [isMobile]);
 
-   const handleMouseMove = useCallback((event: globalThis.MouseEvent) => {
+   const {
+     dotSpacing: DOT_SPACING,
+     baseOpacityMin: BASE_OPACITY_MIN,
+     baseOpacityMax: BASE_OPACITY_MAX,
+     baseRadius: BASE_RADIUS,
+     interactionRadius: INTERACTION_RADIUS,
+     opacityBoost: OPACITY_BOOST,
+     radiusBoost: RADIUS_BOOST,
+     gridCellSize: GRID_CELL_SIZE
+   } = getResponsiveValues();
+
+   const INTERACTION_RADIUS_SQ = INTERACTION_RADIUS * INTERACTION_RADIUS;
+
+   const updateInteractionPosition = useCallback((clientX: number, clientY: number) => {
         const canvas = canvasRef.current;
         if (!canvas) {
             mousePositionRef.current = { x: null, y: null };
             return;
         }
         const rect = canvas.getBoundingClientRect();
-        const canvasX = event.clientX - rect.left;
-        const canvasY = event.clientY - rect.top;
+        const canvasX = clientX - rect.left;
+        const canvasY = clientY - rect.top;
         mousePositionRef.current = { x: canvasX, y: canvasY };
+   }, []);
+
+   const handleMouseMove = useCallback((event: globalThis.MouseEvent) => {
+        updateInteractionPosition(event.clientX, event.clientY);
+   }, [updateInteractionPosition]);
+
+   const handleTouchMove = useCallback((event: TouchEvent) => {
+        if (event.touches && event.touches.length > 0) {
+            const touch = event.touches[0];
+            updateInteractionPosition(touch.clientX, touch.clientY);
+        }
+   }, [updateInteractionPosition]);
+
+   const handleTouchStart = useCallback((event: TouchEvent) => {
+        if (event.touches && event.touches.length > 0) {
+            const touch = event.touches[0];
+            updateInteractionPosition(touch.clientX, touch.clientY);
+        }
+   }, [updateInteractionPosition]);
+
+   const handleTouchEnd = useCallback(() => {
+        mousePositionRef.current = { x: null, y: null };
    }, []);
 
    const createDots = useCallback(() => {
        const { width, height } = canvasSizeRef.current;
        if (width === 0 || height === 0) return;
 
+       // Reduce number of dots for mobile to improve performance
+       const spacing = isMobile ? DOT_SPACING * 1.5 : DOT_SPACING;
+       
        const newDots: Dot[] = [];
        const newGrid: Record<string, number[]> = {};
-       const cols = Math.ceil(width / DOT_SPACING);
-       const rows = Math.ceil(height / DOT_SPACING);
+       const cols = Math.ceil(width / spacing);
+       const rows = Math.ceil(height / spacing);
 
        for (let i = 0; i < cols; i++) {
            for (let j = 0; j < rows; j++) {
-               const x = i * DOT_SPACING + DOT_SPACING / 2;
-               const y = j * DOT_SPACING + DOT_SPACING / 2;
+               const x = i * spacing + spacing / 2;
+               const y = j * spacing + spacing / 2;
                const cellX = Math.floor(x / GRID_CELL_SIZE);
                const cellY = Math.floor(y / GRID_CELL_SIZE);
                const cellKey = `${cellX}_${cellY}`;
@@ -1923,7 +2017,7 @@ const InteractiveHero: React.FC = () => {
        }
        dotsRef.current = newDots;
        gridRef.current = newGrid;
-   }, [DOT_SPACING, GRID_CELL_SIZE, BASE_OPACITY_MIN, BASE_OPACITY_MAX, BASE_RADIUS]);
+   }, [DOT_SPACING, GRID_CELL_SIZE, BASE_OPACITY_MIN, BASE_OPACITY_MAX, BASE_RADIUS, isMobile]);
 
    const handleResize = useCallback(() => {
        const canvas = canvasRef.current;
@@ -1931,6 +2025,12 @@ const InteractiveHero: React.FC = () => {
        const container = canvas.parentElement;
        const width = container ? container.clientWidth : window.innerWidth;
        const height = container ? container.clientHeight : window.innerHeight;
+
+       // Check if viewport is mobile
+       const newIsMobile = window.innerWidth < 768;
+       if (newIsMobile !== isMobile) {
+           setIsMobile(newIsMobile);
+       }
 
        if (canvas.width !== width || canvas.height !== height ||
            canvasSizeRef.current.width !== width || canvasSizeRef.current.height !== height)
@@ -1940,7 +2040,7 @@ const InteractiveHero: React.FC = () => {
            canvasSizeRef.current = { width, height };
            createDots();
        }
-   }, [createDots]);
+   }, [createDots, isMobile]);
 
    const animateDots = useCallback(() => {
        const canvas = canvasRef.current;
@@ -1957,10 +2057,17 @@ const InteractiveHero: React.FC = () => {
 
        ctx.clearRect(0, 0, width, height);
 
+       // Optimize for mobile: only animate dots when interacting or based on proximity to viewport center
+       const shouldAnimate = !isMobile || mouseX !== null || mouseY !== null;
+       
+       // For mobile, create gentle animation near the viewport center when not touching
+       const centerX = isMobile && mouseX === null ? width / 2 : mouseX;
+       const centerY = isMobile && mouseY === null ? height / 2 : mouseY;
+       
        const activeDotIndices = new Set<number>();
-       if (mouseX !== null && mouseY !== null) {
-           const mouseCellX = Math.floor(mouseX / GRID_CELL_SIZE);
-           const mouseCellY = Math.floor(mouseY / GRID_CELL_SIZE);
+       if (centerX !== null && centerY !== null) {
+           const mouseCellX = Math.floor(centerX / GRID_CELL_SIZE);
+           const mouseCellY = Math.floor(centerY / GRID_CELL_SIZE);
            const searchRadius = Math.ceil(INTERACTION_RADIUS / GRID_CELL_SIZE);
            for (let i = -searchRadius; i <= searchRadius; i++) {
                for (let j = -searchRadius; j <= searchRadius; j++) {
@@ -1974,7 +2081,11 @@ const InteractiveHero: React.FC = () => {
            }
        }
 
-       dots.forEach((dot, index) => {
+       // For mobile, animate fewer dots for better performance
+       const dotStep = isMobile ? 2 : 1;
+       for (let i = 0; i < dots.length; i += dotStep) {
+           const dot = dots[i];
+           
            dot.currentOpacity += dot.opacitySpeed;
            if (dot.currentOpacity >= dot.targetOpacity || dot.currentOpacity <= BASE_OPACITY_MIN) {
                dot.opacitySpeed = -dot.opacitySpeed;
@@ -1985,15 +2096,24 @@ const InteractiveHero: React.FC = () => {
            let interactionFactor = 0;
            dot.currentRadius = dot.baseRadius;
 
-           if (mouseX !== null && mouseY !== null && activeDotIndices.has(index)) {
-               const dx = dot.x - mouseX;
-               const dy = dot.y - mouseY;
+           if (shouldAnimate && centerX !== null && centerY !== null && activeDotIndices.has(i)) {
+               const dx = dot.x - centerX;
+               const dy = dot.y - centerY;
                const distSq = dx * dx + dy * dy;
 
                if (distSq < INTERACTION_RADIUS_SQ) {
                    const distance = Math.sqrt(distSq);
-                   interactionFactor = Math.max(0, 1 - distance / INTERACTION_RADIUS);
-                   interactionFactor = interactionFactor * interactionFactor;
+                   
+                   // For mobile auto-animation (no touch), use gentler effect
+                   if (isMobile && mouseX === null && mouseY === null) {
+                       // Create subtle pulsing effect
+                       const time = performance.now() / 1000;
+                       const pulseScale = (Math.sin(time + dot.x * 0.01 + dot.y * 0.01) + 1) / 2;
+                       interactionFactor = Math.max(0, 0.3 - distance / INTERACTION_RADIUS) * pulseScale;
+                   } else {
+                       interactionFactor = Math.max(0, 1 - distance / INTERACTION_RADIUS);
+                       interactionFactor = interactionFactor * interactionFactor;
+                   }
                }
            }
 
@@ -2009,34 +2129,47 @@ const InteractiveHero: React.FC = () => {
            ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${finalOpacity.toFixed(3)})`;
            ctx.arc(dot.x, dot.y, dot.currentRadius, 0, Math.PI * 2);
            ctx.fill();
-       });
+       }
 
        animationFrameId.current = requestAnimationFrame(animateDots);
-   }, [GRID_CELL_SIZE, INTERACTION_RADIUS, INTERACTION_RADIUS_SQ, OPACITY_BOOST, RADIUS_BOOST, BASE_OPACITY_MIN, BASE_OPACITY_MAX, BASE_RADIUS]);
+   }, [GRID_CELL_SIZE, INTERACTION_RADIUS, INTERACTION_RADIUS_SQ, OPACITY_BOOST, RADIUS_BOOST, BASE_OPACITY_MIN, BASE_OPACITY_MAX, BASE_RADIUS, isMobile]);
 
    useEffect(() => {
        handleResize();
        const canvasElement = canvasRef.current;
-        const handleMouseLeave = () => {
-            mousePositionRef.current = { x: null, y: null };
-        };
+       
+       const handleMouseLeave = () => {
+           mousePositionRef.current = { x: null, y: null };
+       };
 
+       // Add event listeners for both mouse and touch events
        window.addEventListener('mousemove', handleMouseMove, { passive: true });
+       window.addEventListener('touchmove', handleTouchMove, { passive: true });
+       window.addEventListener('touchstart', handleTouchStart, { passive: true });
+       window.addEventListener('touchend', handleTouchEnd, { passive: true });
        window.addEventListener('resize', handleResize);
        document.documentElement.addEventListener('mouseleave', handleMouseLeave);
 
-
+       // Create auto animation
        animationFrameId.current = requestAnimationFrame(animateDots);
 
        return () => {
            window.removeEventListener('resize', handleResize);
            window.removeEventListener('mousemove', handleMouseMove);
+           window.removeEventListener('touchmove', handleTouchMove);
+           window.removeEventListener('touchstart', handleTouchStart);
+           window.removeEventListener('touchend', handleTouchEnd);
            document.documentElement.removeEventListener('mouseleave', handleMouseLeave);
            if (animationFrameId.current) {
                cancelAnimationFrame(animationFrameId.current);
            }
        };
-   }, [handleResize, handleMouseMove, animateDots]);
+   }, [handleResize, handleMouseMove, handleTouchMove, handleTouchStart, handleTouchEnd, animateDots]);
+
+   useEffect(() => {
+       // Apply mobile optimization whenever isMobile changes
+       createDots();
+   }, [isMobile, createDots]);
 
    useEffect(() => {
        if (isMobileMenuOpen) {
