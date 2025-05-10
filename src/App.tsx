@@ -15,6 +15,7 @@ import LiteracyBlog from './pages/blogs/Literacy';
 import EncryptionBasicsBlog from './pages/blogs/EncryptionBasics';
 import CollegePrepBlog from './pages/blogs/CollegePrep';
 import ScienceExperimentsBlog from './pages/blogs/ScienceExperiments';
+import NotFoundPage from './pages/NotFoundPage';
 import { ThemeProvider } from './contexts/ThemeContext';
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
             <Route path="/blog/encryption-basics" element={<EncryptionBasicsBlog />} />
             <Route path="/blog/college-prep" element={<CollegePrepBlog />} />
             <Route path="/blog/science-experiments" element={<ScienceExperimentsBlog />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Layout>
       </Router>

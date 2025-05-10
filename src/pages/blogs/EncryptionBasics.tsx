@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PageHero from '../../components/blocks/hero-section';
+import BlogSectionBreak from '../../components/BlogSectionBreak';
+import BlogIllustrationContainer from '../../components/BlogIllustrationContainer';
+import BlogKeyPoint from '../../components/BlogKeyPoint';
 
 const EncryptionBasicsBlog = () => {
   return (
@@ -33,6 +36,15 @@ const EncryptionBasicsBlog = () => {
             </div>
           </motion.div>
 
+          <div className="mb-8">
+            <Link to="/blog" className="inline-flex items-center dark:text-white text-gray-700 font-medium hover:text-primary transition duration-300">
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Back to All Articles
+            </Link>
+          </div>
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -52,6 +64,12 @@ const EncryptionBasicsBlog = () => {
                 In this article, we'll demystify the basics of encryption in simple, accessible terms that both teenagers and parents can understand. No advanced technical knowledge required!
               </p>
 
+              <BlogIllustrationContainer 
+                category="Cybersecurity" 
+                title="Digital protection in action"
+                position="right"
+              />
+
               <h2>What is Encryption, Really?</h2>
               <p>
                 At its core, encryption is like a secret code that transforms your readable information (called "plaintext") into a scrambled version (called "ciphertext") that appears meaningless to anyone who doesn't have the special key to decode it.
@@ -68,6 +86,11 @@ const EncryptionBasicsBlog = () => {
                 Without the proper key, the encrypted data remains unreadable gibberish, protecting it from prying eyes even if someone manages to intercept it.
               </p>
 
+              <BlogKeyPoint
+                category="Cybersecurity"
+                point="Encryption isn't about hiding illegal activity—it's the digital equivalent of putting your letter in an envelope instead of sending a postcard that anyone can read."
+              />
+
               <h2>A Brief History: From Ancient Times to Your Smartphone</h2>
               <p>
                 Encryption isn't a new concept. In fact, humans have been using various forms of secret codes and ciphers for thousands of years:
@@ -83,10 +106,18 @@ const EncryptionBasicsBlog = () => {
                 The fundamental concept hasn't changed – disguise information so that only authorized parties can understand it – but the methods have become exponentially more sophisticated.
               </p>
 
+              <BlogSectionBreak category="Cybersecurity" />
+
               <h2>How Does Modern Encryption Work?</h2>
               <p>
                 To understand basic encryption, let's start with a simple concept that's actually used in real encryption: the "key."
               </p>
+              
+              <BlogIllustrationContainer 
+                category="Cybersecurity" 
+                title="Keys to digital security"
+                position="left"
+              />
               
               <h3>Keys: The Heart of Encryption</h3>
               <p>
@@ -123,10 +154,17 @@ const EncryptionBasicsBlog = () => {
                 This is why properly implemented encryption is considered mathematically unbreakable with current technology.
               </p>
 
+              <BlogKeyPoint
+                category="Cybersecurity"
+                point="The security of encryption doesn't rely on keeping the method secret—it depends on the mathematical impossibility of guessing the key, even when the algorithm is publicly known."
+              />
+
               <h2>Where You Encounter Encryption Every Day</h2>
               <p>
                 Encryption is working behind the scenes in almost every digital interaction you have:
               </p>
+              
+              <BlogSectionBreak category="Cybersecurity" />
               
               <h3>Web Browsing</h3>
               <p>
@@ -140,6 +178,12 @@ const EncryptionBasicsBlog = () => {
               <p>
                 Without this encryption, anyone on the same network (like public Wi-Fi) could potentially see what you're doing, including passwords you type.
               </p>
+              
+              <BlogIllustrationContainer 
+                category="Cybersecurity" 
+                title="Secure communications"
+                position="right"
+              />
               
               <h3>Messaging Apps</h3>
               <p>
@@ -172,6 +216,12 @@ const EncryptionBasicsBlog = () => {
                 Understanding the basics of encryption can help teens make better security decisions:
               </p>
               
+              <BlogIllustrationContainer 
+                category="Cybersecurity" 
+                title="Protecting your digital life"
+                position="left"
+              />
+              
               <h3>Secure Your Smartphone</h3>
               <p>
                 Your phone likely contains your entire digital life. To protect it:
@@ -192,6 +242,11 @@ const EncryptionBasicsBlog = () => {
                 <li>Remember that encryption protects the message in transit, but not after it's received (screenshots exist!)</li>
               </ul>
               
+              <BlogKeyPoint
+                category="Cybersecurity"
+                point="Even with perfect encryption, digital security requires good judgment about what you share online. Encryption can't protect information after it's been decrypted and viewed by the recipient."
+              />
+              
               <h3>Create Strong Passwords</h3>
               <p>
                 Encryption only works if access to your accounts is protected:
@@ -201,6 +256,8 @@ const EncryptionBasicsBlog = () => {
                 <li>Consider a password manager to generate and store complex passwords securely</li>
                 <li>Enable two-factor authentication wherever possible for an additional layer of security</li>
               </ul>
+
+              <BlogSectionBreak category="Cybersecurity" />
 
               <h2>For Parents: Talking to Teens About Encryption</h2>
               <p>
@@ -216,6 +273,12 @@ const EncryptionBasicsBlog = () => {
                 <li>Discuss how encryption protects against identity theft, financial fraud, and privacy violations</li>
                 <li>Emphasize that encryption is a standard security practice, not a way to hide activities</li>
               </ul>
+              
+              <BlogIllustrationContainer 
+                category="Cybersecurity" 
+                title="Family digital safety"
+                position="right"
+              />
               
               <h3>Balance Safety and Independence</h3>
               <p>
@@ -249,16 +312,18 @@ const EncryptionBasicsBlog = () => {
               <p>
                 Understanding the basics now prepares you to navigate this increasingly encrypted future.
               </p>
-
-              <h2>Conclusion: Encryption as Digital Self-Defense</h2>
+              
+              <BlogKeyPoint
+                category="Cybersecurity"
+                point="Digital literacy in the 21st century requires understanding basic security concepts like encryption—it's becoming as fundamental as knowing how to lock your front door."
+              />
+              
+              <h2>Conclusion</h2>
               <p>
-                Think of encryption as digital self-defense – a shield that protects your personal information as it travels across the sometimes hostile terrain of the internet. It's not about having something to hide; it's about exercising your right to privacy and security in an increasingly digital world.
+                Encryption may seem like a complex technical topic, but its purpose is simple: to protect your digital information and communications in an increasingly connected world. By understanding the basics of how encryption works and implementing good security practices, both teens and parents can enjoy the benefits of digital technology while minimizing its risks.
               </p>
               <p>
-                By understanding the basics of how encryption works, both teens and parents can make more informed decisions about digital security. The technical details may be complex, but the core concept is simple: encryption turns your valuable information into indecipherable code that only the right keys can unlock.
-              </p>
-              <p>
-                In an age where data breaches and privacy concerns make headlines daily, encryption remains one of our most powerful tools for protecting our digital lives. It works silently in the background, securing everything from casual conversations to financial transactions – a digital guardian that's worth understanding and appreciating.
+                Remember that encryption is just one layer in a comprehensive approach to digital security. Combine it with good judgment, regular updates, strong passwords, and open family discussions about online safety to create a robust foundation for your digital life.
               </p>
             </div>
 

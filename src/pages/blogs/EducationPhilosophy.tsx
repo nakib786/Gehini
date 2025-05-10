@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PageHero from '../../components/blocks/hero-section';
+import BlogSectionBreak from '../../components/BlogSectionBreak';
+import BlogIllustrationContainer from '../../components/BlogIllustrationContainer';
+import BlogKeyPoint from '../../components/BlogKeyPoint';
 
 const EducationPhilosophyBlog = () => {
   return (
@@ -33,6 +36,15 @@ const EducationPhilosophyBlog = () => {
             </div>
           </motion.div>
 
+          <div className="mb-8">
+            <Link to="/blog" className="inline-flex items-center dark:text-white text-gray-700 font-medium hover:text-primary transition duration-300">
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Back to All Articles
+            </Link>
+          </div>
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -49,10 +61,21 @@ const EducationPhilosophyBlog = () => {
                 In the realm of education, we often look to innovative teaching methodologies, advanced technologies, and progressive educational theories. However, one of the most profound and effective educational models has existed throughout human history: the way a mother teaches her child.
               </p>
 
+              <BlogIllustrationContainer 
+                category="Education" 
+                title="The foundational teacher"
+                position="right"
+              />
+
               <h2>The Natural Educator</h2>
               <p>
                 Mothers are, by necessity, our first teachers. They guide us through our earliest learning experiences with a distinctive blend of patience, intuition, and unconditional support. This educational approach—often overlooked in formal pedagogical discussions—contains powerful lessons for all educators.
               </p>
+
+              <BlogKeyPoint
+                category="Education"
+                point="A mother's teaching naturally incorporates differentiated instruction, emotional intelligence, and contextual learning—principles that modern education strives to formalize."
+              />
 
               <h2>Patience as a Pedagogical Tool</h2>
               <p>
@@ -62,6 +85,8 @@ const EducationPhilosophyBlog = () => {
                 Professional educators can learn from this approach. When we face a student struggling with a concept, the maternal model reminds us that sometimes the most effective strategy is simply to try again—with renewed patience and a slightly different approach.
               </p>
 
+              <BlogSectionBreak category="Education" />
+
               <h2>Individualized Instruction</h2>
               <p>
                 Long before "personalized learning" became an educational buzzword, mothers were practicing it instinctively. They naturally adjust their teaching methods based on their intimate knowledge of their child's personality, interests, strengths, and challenges.
@@ -69,6 +94,12 @@ const EducationPhilosophyBlog = () => {
               <p>
                 In classroom settings, this principle reminds us of the importance of truly knowing our students as individuals. The more we understand about each student's unique learning profile, the more effectively we can tailor our instruction to meet their needs.
               </p>
+
+              <BlogIllustrationContainer 
+                category="Education" 
+                title="Safe learning environments"
+                position="left"
+              />
 
               <h2>Emotional Safety in Learning Environments</h2>
               <p>
@@ -78,6 +109,11 @@ const EducationPhilosophyBlog = () => {
                 In our classrooms and educational institutions, we can strive to create this same sense of security—spaces where students feel safe to take intellectual risks, where curiosity is celebrated, and where mistakes are viewed as valuable parts of the learning process.
               </p>
 
+              <BlogKeyPoint
+                category="Education"
+                point="Emotional safety is perhaps the most undervalued aspect of effective learning environments. When students feel secure, their cognitive bandwidth expands dramatically."
+              />
+
               <h2>Teaching Through Real-World Context</h2>
               <p>
                 Mothers rarely teach in abstract terms. Instead, they naturally embed learning in real-world contexts—explaining math concepts while cooking, teaching language through everyday conversations, or exploring science through backyard discoveries.
@@ -86,6 +122,8 @@ const EducationPhilosophyBlog = () => {
                 This contextualized approach to education helps children understand not just how things work, but why they matter. It's a powerful reminder for all educators about the importance of connecting academic concepts to authentic, meaningful contexts.
               </p>
 
+              <BlogSectionBreak category="Education" />
+
               <h2>The Balance of Challenge and Support</h2>
               <p>
                 Perhaps most remarkably, mothers intuitively understand the delicate balance between challenging a child and providing support. They know when to push for more effort and when to offer help—a sophisticated educational judgment that combines high expectations with responsive assistance.
@@ -93,6 +131,12 @@ const EducationPhilosophyBlog = () => {
               <p>
                 This balance represents the essence of effective teaching: maintaining high standards while providing the necessary scaffolding for students to reach them.
               </p>
+
+              <BlogIllustrationContainer 
+                category="Education" 
+                title="The art of balanced teaching"
+                position="right"
+              />
 
               <h2>Conclusion: The Universal Teacher</h2>
               <p>

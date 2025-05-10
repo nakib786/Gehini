@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Book, Menu, Sunset, Trees, Zap } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Book, ChevronDown, ChevronRight, GraduationCap, Menu, School, Shield, Sunset, Trees, Zap, Sparkles } from "lucide-react";
 
 import {
   Accordion,
@@ -23,12 +24,15 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
 
 interface MenuItem {
   title: string;
   url: string;
   description?: string;
   icon?: React.ReactNode;
+  image?: string;
+  label?: string;
   items?: MenuItem[];
 }
 
@@ -57,6 +61,52 @@ interface Navbar1Props {
   isDarkMode?: boolean;
 }
 
+// TypewriterEffect component for animating text
+const TypewriterEffect = ({ text, loop = true }: { text: string, loop?: boolean }) => {
+  const [displayText, setDisplayText] = useState("");
+  const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState("forward");
+  
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout>;
+    
+    if (direction === "forward") {
+      if (index < text.length) {
+        timer = setTimeout(() => {
+          setDisplayText(prev => prev + text[index]);
+          setIndex(prevIndex => prevIndex + 1);
+        }, 150); // typing speed
+      } else {
+        timer = setTimeout(() => {
+          setDirection("backward");
+        }, 2000); // pause at full text
+      }
+    } else {
+      if (index > 0) {
+        timer = setTimeout(() => {
+          setDisplayText(prev => prev.slice(0, -1));
+          setIndex(prevIndex => prevIndex - 1);
+        }, 75); // erasing speed (faster than typing)
+      } else {
+        if (loop) {
+          timer = setTimeout(() => {
+            setDirection("forward");
+          }, 1000); // pause before restarting
+        }
+      }
+    }
+    
+    return () => clearTimeout(timer);
+  }, [index, direction, text, loop]);
+  
+  return (
+    <span className="relative">
+      {displayText}
+      <span className="absolute right-[-2px] top-0 h-full w-[2px] bg-[#0CF2A0] animate-blink"></span>
+    </span>
+  );
+};
+
 const Navbar1 = ({
   logo = {
     url: "/",
@@ -67,33 +117,32 @@ const Navbar1 = ({
   menu = [
     { title: "Home", url: "/" },
     {
-      title: "Features",
+      title: "Services",
       url: "#",
       items: [
         {
-          title: "Dashboard",
-          description: "Monitor your data and performance metrics",
+          title: "K-12 Tutoring",
+          description: "Personalized tutoring for K-12 students",
+          icon: <GraduationCap className="size-5 shrink-0" />,
+          url: "/services/tutoring",
+        },
+        {
+          title: "Cybersecurity",
+          description: "Cybersecurity education and training",
+          icon: <Shield className="size-5 shrink-0" />,
+          url: "/services/cybersecurity",
+        },
+        {
+          title: "Online Courses",
+          description: "Self-paced online learning programs",
           icon: <Book className="size-5 shrink-0" />,
-          url: "/dashboard",
+          url: "/services/courses",
         },
         {
-          title: "Analytics",
-          description: "Dive deep into your business metrics",
-          icon: <Trees className="size-5 shrink-0" />,
-          url: "/analytics",
-        },
-        {
-          title: "Reports",
-          description: "Generate insightful reports for your business",
-          icon: <Sunset className="size-5 shrink-0" />,
-          url: "/reports",
-        },
-        {
-          title: "Integrations",
-          description:
-            "Connect with your favorite tools and enhance productivity",
-          icon: <Zap className="size-5 shrink-0" />,
-          url: "/integrations",
+          title: "Career Guidance",
+          description: "Expert career counseling and planning",
+          icon: <Sparkles className="size-5 shrink-0" />,
+          url: "/services/career",
         },
       ],
     },
@@ -169,7 +218,9 @@ const Navbar1 = ({
                   }}
                 />
               </div>
-              <span className="text-xl font-semibold text-white group-hover:text-[#0CF2A0] transition-colors duration-300">{logo.title}</span>
+              <span className="text-xl font-semibold text-white group-hover:text-[#0CF2A0] transition-colors duration-300">
+                <TypewriterEffect text="Gehini Gurukul" />
+              </span>
             </a>
             <div className="flex items-center">
               <NavigationMenu>
@@ -198,7 +249,9 @@ const Navbar1 = ({
                   }}
                 />
               </div>
-              <span className="text-lg font-semibold text-white hover:text-[#0CF2A0] transition-colors duration-300">{logo.title}</span>
+              <span className="text-lg font-semibold text-white hover:text-[#0CF2A0] transition-colors duration-300">
+                <TypewriterEffect text="Gehini Gurukul" />
+              </span>
             </a>
             <Sheet>
               <SheetTrigger asChild>
@@ -212,7 +265,7 @@ const Navbar1 = ({
                     <a href={logo.url} className="flex items-center gap-2">
                       <img src={logo.src} className="w-8" alt={logo.alt} />
                       <span className="text-lg font-semibold text-white">
-                        {logo.title}
+                        <TypewriterEffect text="Gehini Gurukul" />
                       </span>
                     </a>
                   </SheetTitle>
@@ -249,36 +302,79 @@ const Navbar1 = ({
 };
 
 const renderMenuItem = (item: MenuItem) => {
-  if (item.items) {
+  if (item.items && item.title === "Services") {
     return (
       <NavigationMenuItem key={item.title} className="text-white">
-        <NavigationMenuTrigger className="font-medium text-white text-base">{item.title}</NavigationMenuTrigger>
-        <NavigationMenuContent>
-          <ul className="w-80 p-3">
-            <NavigationMenuLink>
-              {item.items.map((subItem) => (
-                <li key={subItem.title}>
+        <div className="relative">
+          <button className="group inline-flex h-10 items-center justify-center rounded-full px-5 py-3 text-base font-medium text-white transition-all duration-300 hover:bg-[#0CF2A0]/10 hover:text-[#0CF2A0] gap-1 peer">
+            {item.title}
+            <ChevronDown className="h-4 w-4 transition-transform duration-200 peer-hover:rotate-180" />
+          </button>
+          <div className="absolute left-0 top-full z-10 mt-2 w-[500px] origin-top-left scale-95 opacity-0 pointer-events-none transition-all duration-200 peer-hover:scale-100 peer-hover:opacity-100 peer-hover:pointer-events-auto hover:scale-100 hover:opacity-100 hover:pointer-events-auto">
+            <div className="overflow-hidden rounded-xl border border-[#0CF2A0]/30 bg-black/80 backdrop-blur-lg shadow-lg shadow-[#0CF2A0]/20">
+              <div className="p-4">
+                <div className="mb-2 text-[#0CF2A0] text-sm font-medium">Services</div>
+                <div className="grid grid-cols-2 gap-4">
+                  {item.items.map((subItem) => (
+                    <a
+                      key={subItem.title}
+                      href={subItem.url}
+                      className="block rounded-lg p-3 hover:bg-[#0CF2A0]/10 transition-colors"
+                    >
+                      <div className="flex flex-col space-y-1.5">
+                        <div className="font-medium text-white">{subItem.title}</div>
+                        <p className="text-sm text-white/70">
+                          {subItem.description}
+                        </p>
+                        <div className="text-[#0CF2A0] text-sm flex items-center mt-1">
+                          Learn more <ChevronRight className="h-3 w-3 ml-1" />
+                        </div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </NavigationMenuItem>
+    );
+  } else if (item.items) {
+    return (
+      <NavigationMenuItem key={item.title} className="text-white">
+        <div className="relative">
+          <button className="group inline-flex h-10 items-center justify-center rounded-full px-5 py-3 text-base font-medium text-white transition-all duration-300 hover:bg-[#0CF2A0]/10 hover:text-[#0CF2A0] gap-1 peer">
+            {item.title}
+            <ChevronDown className="h-4 w-4 transition-transform duration-200 peer-hover:rotate-180" />
+          </button>
+          <div className="absolute left-0 top-full z-10 mt-2 w-80 origin-top-left scale-95 opacity-0 pointer-events-none transition-all duration-200 peer-hover:scale-100 peer-hover:opacity-100 peer-hover:pointer-events-auto hover:scale-100 hover:opacity-100 hover:pointer-events-auto">
+            <div className="overflow-hidden rounded-xl border border-[#0CF2A0]/30 bg-black/80 backdrop-blur-lg shadow-lg shadow-[#0CF2A0]/20">
+              <div className="grid p-1">
+                {item.items.map((subItem) => (
                   <a
-                    className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
+                    key={subItem.title}
+                    className="flex items-center gap-4 rounded-lg p-3 hover:bg-[#0CF2A0]/10 transition-colors duration-200"
                     href={subItem.url}
                   >
-                    {subItem.icon}
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#0CF2A0]/10 text-[#0CF2A0]">
+                      {subItem.icon}
+                    </div>
                     <div>
-                      <div className="text-sm font-semibold">
+                      <div className="text-sm font-medium text-white">
                         {subItem.title}
                       </div>
                       {subItem.description && (
-                        <p className="text-sm leading-snug text-muted-foreground">
+                        <p className="mt-1 text-sm text-white/70 line-clamp-1">
                           {subItem.description}
                         </p>
                       )}
                     </div>
                   </a>
-                </li>
-              ))}
-            </NavigationMenuLink>
-          </ul>
-        </NavigationMenuContent>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </NavigationMenuItem>
     );
   }
@@ -295,24 +391,53 @@ const renderMenuItem = (item: MenuItem) => {
 };
 
 const renderMobileMenuItem = (item: MenuItem) => {
-  if (item.items) {
+  if (item.items && item.title === "Services") {
     return (
       <AccordionItem key={item.title} value={item.title} className="border-b-0">
-        <AccordionTrigger className="py-0 font-semibold hover:no-underline text-white">
-          {item.title}
+        <AccordionTrigger className="py-2 font-semibold hover:no-underline text-white group rounded-lg px-3 hover:bg-[#0CF2A0]/10">
+          <span className="group-hover:text-[#0CF2A0] transition-colors">{item.title}</span>
         </AccordionTrigger>
-        <AccordionContent className="mt-2">
+        <AccordionContent className="mt-2 space-y-1.5">
           {item.items.map((subItem) => (
             <a
               key={subItem.title}
-              className="flex select-none gap-4 rounded-md p-3 leading-none outline-none transition-colors hover:bg-[#0CF2A0]/10 hover:text-[#0CF2A0] text-white"
+              className="block rounded-lg p-3 hover:bg-[#0CF2A0]/10 transition-colors text-white"
               href={subItem.url}
             >
-              {subItem.icon}
+              <div className="flex flex-col space-y-1">
+                <div className="font-medium">{subItem.title}</div>
+                <p className="text-xs leading-snug text-white/70">
+                  {subItem.description}
+                </p>
+                <div className="text-[#0CF2A0] text-xs flex items-center mt-1">
+                  Learn more <ChevronRight className="h-3 w-3 ml-1" />
+                </div>
+              </div>
+            </a>
+          ))}
+        </AccordionContent>
+      </AccordionItem>
+    );
+  } else if (item.items) {
+    return (
+      <AccordionItem key={item.title} value={item.title} className="border-b-0">
+        <AccordionTrigger className="py-2 font-semibold hover:no-underline text-white group rounded-lg px-3 hover:bg-[#0CF2A0]/10">
+          <span className="group-hover:text-[#0CF2A0] transition-colors">{item.title}</span>
+        </AccordionTrigger>
+        <AccordionContent className="mt-2 space-y-1">
+          {item.items.map((subItem) => (
+            <a
+              key={subItem.title}
+              className="flex select-none gap-3 rounded-lg p-3 leading-none outline-none transition-colors hover:bg-[#0CF2A0]/10 hover:text-[#0CF2A0] text-white"
+              href={subItem.url}
+            >
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#0CF2A0]/10 text-[#0CF2A0]">
+                {subItem.icon}
+              </div>
               <div>
                 <div className="text-sm font-semibold">{subItem.title}</div>
                 {subItem.description && (
-                  <p className="text-sm leading-snug text-white/70">
+                  <p className="text-xs leading-snug text-white/70 mt-1 line-clamp-2">
                     {subItem.description}
                   </p>
                 )}
@@ -325,7 +450,11 @@ const renderMobileMenuItem = (item: MenuItem) => {
   }
 
   return (
-    <a key={item.title} href={item.url} className="font-semibold text-white hover:text-[#0CF2A0]">
+    <a 
+      key={item.title} 
+      href={item.url} 
+      className="font-semibold text-white hover:text-[#0CF2A0] py-2 px-3 rounded-lg hover:bg-[#0CF2A0]/10 transition-colors block"
+    >
       {item.title}
     </a>
   );

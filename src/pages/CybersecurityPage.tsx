@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PageHero from '../components/blocks/hero-section';
+import CyberTerminal from '../components/animations/CyberTerminal';
 
 // CybersecurityHero Component
 const CybersecurityHero = () => {
@@ -29,11 +30,7 @@ const CybersecurityHero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex justify-center"
           >
-            <img 
-              src="/placeholder-cybersecurity.jpg" 
-              alt="Cybersecurity education" 
-              className="rounded-lg shadow-xl max-w-full h-auto"
-            />
+            <CyberTerminal />
           </motion.div>
         </div>
       </div>

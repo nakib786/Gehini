@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PageHero from '../../components/blocks/hero-section';
+import BlogSectionBreak from '../../components/BlogSectionBreak';
+import BlogIllustrationContainer from '../../components/BlogIllustrationContainer';
+import BlogKeyPoint from '../../components/BlogKeyPoint';
 
 const CybersecurityBlog = () => {
   return (
@@ -33,6 +36,15 @@ const CybersecurityBlog = () => {
             </div>
           </motion.div>
 
+          <div className="mb-8">
+            <Link to="/blog" className="inline-flex items-center dark:text-white text-gray-700 font-medium hover:text-primary transition duration-300">
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Back to All Articles
+            </Link>
+          </div>
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -49,10 +61,22 @@ const CybersecurityBlog = () => {
                 In today's digital age, children are growing up surrounded by technology. While the internet offers tremendous educational and social benefits, it also presents unique challenges and risks. As parents, understanding these risks and implementing appropriate safeguards is crucial to ensuring our children's safety online.
               </p>
 
+              <BlogIllustrationContainer 
+                category="Cybersecurity" 
+                title="Protection in the digital age"
+                position="right"
+              />
+
               <h2>Understanding the Digital Landscape</h2>
               <p>
                 Today's children are digital natives, often more comfortable with technology than their parents. By age 12, most children have their own smartphone, and elementary school students regularly use tablets and computers for schoolwork. This early and extensive exposure to technology brings both opportunities and risks.
               </p>
+              
+              <BlogKeyPoint
+                category="Cybersecurity"
+                point="Children often develop technical skills rapidly, but their judgment and awareness of online risks lags behind their technical abilities."
+              />
+              
               <p>
                 Common online risks for children include:
               </p>
@@ -67,6 +91,8 @@ const CybersecurityBlog = () => {
               <p>
                 Rather than responding with fear or excessive restrictions, parents should approach these challenges with knowledge, open communication, and appropriate technological safeguards.
               </p>
+
+              <BlogSectionBreak category="Cybersecurity" />
 
               <h2>Essential Cybersecurity Measures for Parents</h2>
               
@@ -83,6 +109,12 @@ const CybersecurityBlog = () => {
               <p>
                 For younger children, consider creating and managing their passwords yourself, gradually involving them in the process as they mature.
               </p>
+
+              <BlogIllustrationContainer 
+                category="Cybersecurity" 
+                title="Privacy as a priority"
+                position="left"
+              />
 
               <h3>2. Configure Privacy Settings</h3>
               <p>
@@ -108,6 +140,12 @@ const CybersecurityBlog = () => {
                 <li>App approval processes for downloading new applications</li>
                 <li>Activity monitoring to understand your child's digital behavior</li>
               </ul>
+              
+              <BlogKeyPoint
+                category="Cybersecurity"
+                point="Parental controls are most effective when paired with ongoing conversations about online safety and responsible digital citizenship."
+              />
+              
               <p>
                 Remember that these tools should complement, not replace, ongoing conversations about online safety.
               </p>
@@ -127,7 +165,15 @@ const CybersecurityBlog = () => {
                 These measures help prevent unauthorized access to your home network and the devices connected to it.
               </p>
 
+              <BlogSectionBreak category="Cybersecurity" />
+
               <h2>Building Digital Literacy and Responsibility</h2>
+              
+              <BlogIllustrationContainer 
+                category="Cybersecurity" 
+                title="Developing digital citizens"
+                position="right"
+              />
               
               <h3>1. Establish Clear Guidelines</h3>
               <p>
@@ -154,9 +200,21 @@ const CybersecurityBlog = () => {
                 <li>Respond calmly if they report concerning content or interactions</li>
                 <li>Make it clear they won't be punished for reporting problems</li>
               </ul>
+              
+              <BlogKeyPoint
+                category="Cybersecurity"
+                point="Children who feel comfortable talking about online experiences are more likely to report problems before they escalate."
+              />
+              
               <p>
                 When children know they can come to you without judgment, they're more likely to seek help when needed.
               </p>
+
+              <BlogIllustrationContainer 
+                category="Cybersecurity" 
+                title="Critical thinking online"
+                position="left"
+              />
 
               <h3>3. Teach Critical Thinking Skills</h3>
               <p>
@@ -186,7 +244,15 @@ const CybersecurityBlog = () => {
                 Your example is more powerful than any rule you establish.
               </p>
 
+              <BlogSectionBreak category="Cybersecurity" />
+
               <h2>Age-Specific Considerations</h2>
+              
+              <BlogIllustrationContainer 
+                category="Cybersecurity" 
+                title="Age-appropriate guidance"
+                position="right"
+              />
               
               <h3>Ages 5-8</h3>
               <p>
@@ -201,50 +267,87 @@ const CybersecurityBlog = () => {
 
               <h3>Ages 9-12</h3>
               <p>
-                Pre-teens need guidance as their online world expands:
+                Tweens begin to explore more independently:
               </p>
               <ul>
-                <li>Begin discussions about cyberbullying and digital citizenship</li>
-                <li>Introduce concepts of digital reputation</li>
-                <li>Start teaching critical evaluation of online content</li>
-                <li>Continued supervision with gradually increasing independence</li>
+                <li>Start conversations about online safety and digital citizenship</li>
+                <li>Introduce concepts of digital footprints and online reputation</li>
+                <li>Monitor accounts and regularly review online activities together</li>
+                <li>Discuss appropriate responses to cyberbullying and inappropriate content</li>
               </ul>
+              
+              <BlogKeyPoint
+                category="Cybersecurity"
+                point="The transition from elementary to middle school often coincides with increased digital independence, making it a critical time for cyber education."
+              />
 
-              <h3>Ages 13-18</h3>
+              <h3>Ages 13-17</h3>
               <p>
-                Teenagers need preparation for independent digital citizenship:
+                Teens require more autonomy with ongoing guidance:
               </p>
               <ul>
-                <li>Deeper discussions about online risks and responsible use</li>
-                <li>Gradual reduction in monitoring as responsibility is demonstrated</li>
-                <li>Conversations about digital reputation and future implications</li>
-                <li>Preparation for managing their own digital security as adults</li>
+                <li>Shift from monitoring to mentoring</li>
+                <li>Discuss complex topics like digital relationships and sexting</li>
+                <li>Help them understand data privacy and the business models of 'free' services</li>
+                <li>Prepare them for managing their digital lives independently</li>
+                <li>Emphasize the permanence of digital actions</li>
+              </ul>
+              <p>
+                As teens approach adulthood, focus on helping them internalize responsible habits rather than relying on external controls.
+              </p>
+
+              <BlogSectionBreak category="Cybersecurity" />
+
+              <h2>Responding to Digital Problems</h2>
+              
+              <BlogIllustrationContainer 
+                category="Cybersecurity" 
+                title="Addressing concerns effectively"
+                position="left"
+              />
+              
+              <h3>Cyberbullying</h3>
+              <p>
+                If your child experiences online harassment:
+              </p>
+              <ul>
+                <li>Document evidence (screenshots, messages)</li>
+                <li>Use platform reporting tools</li>
+                <li>Contact school officials if classmates are involved</li>
+                <li>Focus on supporting your child emotionally</li>
+                <li>Consider involving law enforcement for serious threats</li>
               </ul>
 
-              <h2>What to Do If Problems Arise</h2>
+              <h3>Exposure to Inappropriate Content</h3>
               <p>
-                Despite best precautions, issues may still occur. If your child encounters online problems:
+                When children encounter disturbing material:
               </p>
-              <ol>
-                <li><strong>Stay calm and supportive</strong> - Your reaction will influence whether they share concerns in the future</li>
-                <li><strong>Document the issue</strong> - Take screenshots or save messages as evidence</li>
-                <li><strong>Report inappropriate content</strong> - Use platform reporting tools</li>
-                <li><strong>Contact authorities if necessary</strong> - For serious concerns like predatory behavior</li>
-                <li><strong>Seek professional help if needed</strong> - For cyberbullying situations or digital addiction</li>
-              </ol>
-              <p>
-                Use these situations as learning opportunities rather than reasons for punishment.
-              </p>
+              <ul>
+                <li>Respond calmly rather than with shock or anger</li>
+                <li>Ask open-ended questions about what they saw</li>
+                <li>Address any misconceptions</li>
+                <li>Review and strengthen content filtering</li>
+                <li>Use the incident as a teaching opportunity</li>
+              </ul>
 
-              <h2>Conclusion: A Balanced Approach</h2>
+              <h3>Privacy Breaches</h3>
               <p>
-                The goal of cybersecurity education for children isn't to instill fear or eliminate all online risks—that would be impossible. Instead, aim to build resilience and judgment that will serve them throughout their digital lives.
+                If personal information is compromised:
+              </p>
+              <ul>
+                <li>Change passwords immediately</li>
+                <li>Contact relevant platforms</li>
+                <li>Monitor accounts for suspicious activity</li>
+                <li>Consider credit freezes for identity theft concerns</li>
+                <li>Review what information was shared and potential consequences</li>
+              </ul>
+
+              <h2>Conclusion: Balance, Not Fear</h2>
+              <p>
+                The goal of cybersecurity education isn't to make children fearful of technology but to empower them to use it wisely. By combining technological protections with ongoing education and open communication, parents can help children develop into responsible digital citizens who enjoy the benefits of the online world while minimizing its risks.
               </p>
               <p>
-                By combining technological protections with education and open communication, you can help your children navigate the digital world safely and develop into responsible digital citizens.
-              </p>
-              <p>
-                Remember that your involvement in your child's digital life should evolve as they mature, gradually shifting from direct protection to mentorship and guidance as they develop their own judgment and responsibility.
+                Remember that digital parenting is a continuous journey that evolves as both technology and your child develop. Stay informed, remain engaged, and focus on building your child's internal compass for navigating the digital world safely and responsibly.
               </p>
             </div>
 

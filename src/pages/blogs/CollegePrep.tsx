@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PageHero from '../../components/blocks/hero-section';
+import BlogSectionBreak from '../../components/BlogSectionBreak';
+import BlogIllustrationContainer from '../../components/BlogIllustrationContainer';
+import BlogKeyPoint from '../../components/BlogKeyPoint';
 
 const CollegePrepBlog = () => {
   return (
@@ -33,6 +36,15 @@ const CollegePrepBlog = () => {
             </div>
           </motion.div>
 
+          <div className="mb-8">
+            <Link to="/blog" className="inline-flex items-center dark:text-white text-gray-700 font-medium hover:text-primary transition duration-300">
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Back to All Articles
+            </Link>
+          </div>
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -52,6 +64,12 @@ const CollegePrepBlog = () => {
                 This comprehensive guide breaks down the college preparation process into a year-by-year timeline, providing clear direction for students from freshman year through the final stages of the application process in senior year.
               </p>
 
+              <BlogIllustrationContainer 
+                category="College" 
+                title="Planning your path to college"
+                position="right"
+              />
+
               <h2>Understanding the Modern College Landscape</h2>
               <p>
                 Before diving into the timeline, it's helpful to understand several key trends in today's college admissions environment:
@@ -67,10 +85,21 @@ const CollegePrepBlog = () => {
                 With these trends in mind, let's explore what students should focus on each year of high school.
               </p>
 
+              <BlogKeyPoint
+                category="College"
+                point="College preparation is a marathon, not a sprint. The most successful applicants start early and build their profiles consistently over all four years of high school."
+              />
+
               <h2>Freshman Year: Building Foundations (Grade 9)</h2>
               <p>
                 While college may seem distant in freshman year, this is the perfect time to lay groundwork that will serve you well throughout the application process.
               </p>
+              
+              <BlogIllustrationContainer 
+                category="College" 
+                title="Building a strong foundation"
+                position="left"
+              />
               
               <h3>Academic Focus</h3>
               <ul>
@@ -103,6 +132,8 @@ const CollegePrepBlog = () => {
                 <li>Consider creating an email address specifically for academic/professional purposes</li>
               </ul>
 
+              <BlogSectionBreak category="College" />
+
               <h2>Sophomore Year: Developing Direction (Grade 10)</h2>
               <p>
                 Sophomore year is about deepening engagement and beginning more focused exploration of college options.
@@ -115,6 +146,11 @@ const CollegePrepBlog = () => {
                 <li>Discuss AP, IB, or dual enrollment options for junior year</li>
                 <li>Consider foreign language requirements for potential colleges</li>
               </ul>
+              
+              <BlogKeyPoint
+                category="College"
+                point="Sophomore year is the ideal time to begin exploring potential majors and career paths, which can help inform your course selections for junior and senior years."
+              />
               
               <h3>Extracurricular Growth</h3>
               <ul>
@@ -140,6 +176,12 @@ const CollegePrepBlog = () => {
                 <li>If taking AP courses, prepare for AP exams in May</li>
               </ul>
 
+              <BlogIllustrationContainer 
+                category="College" 
+                title="Critical preparation year"
+                position="right"
+              />
+
               <h2>Junior Year: Critical Preparations (Grade 11)</h2>
               <p>
                 Junior year marks the most intensive pre-application period, with significant testing, research, and planning.
@@ -163,6 +205,11 @@ const CollegePrepBlog = () => {
                 <li>Consider who might write your letters of recommendation</li>
               </ul>
               
+              <BlogKeyPoint
+                category="College"
+                point="Junior year grades are typically the last complete year that colleges will see on your initial application, making them particularly important in the admissions process."
+              />
+              
               <h3>Summer Before Senior Year</h3>
               <ul>
                 <li>Narrow down your college list (typically 6-10 schools with varying selectivity levels)</li>
@@ -174,10 +221,18 @@ const CollegePrepBlog = () => {
                 <li>Consider meaningful summer experiences that demonstrate your interests and commitments</li>
               </ul>
 
+              <BlogSectionBreak category="College" />
+
               <h2>Senior Year: Application and Decision (Grade 12)</h2>
               <p>
                 Senior year involves finalizing and submitting applications, then making your college choice.
               </p>
+              
+              <BlogIllustrationContainer 
+                category="College" 
+                title="Finalizing your college journey"
+                position="left"
+              />
               
               <h3>Fall Semester</h3>
               <ul>
@@ -241,132 +296,106 @@ const CollegePrepBlog = () => {
                 </li>
               </ul>
 
+              <BlogKeyPoint
+                category="College"
+                point="The college decision process should balance emotional and practical considerations—weighing how a school feels when you visit with factors like academic programs, financial aid, and career outcomes."
+              />
+
               <h2>Essential Components of a Strong Application</h2>
               <p>
                 As you progress through this timeline, keep these key application elements in mind:
               </p>
               
+              <BlogSectionBreak category="College" />
+              
               <h3>Academic Record</h3>
               <p>
-                Your transcript remains the most important element of your application. Colleges consider:
+                Your transcript remains the most important component of your application:
               </p>
               <ul>
-                <li>Course rigor (taking challenging courses available to you)</li>
-                <li>Grade trends (improvement over time is viewed positively)</li>
-                <li>Performance in subjects relevant to your intended major</li>
-                <li>Overall GPA (both weighted and unweighted)</li>
+                <li>Course rigor (taking challenging classes) is often weighted as heavily as actual grades</li>
+                <li>Upward grade trends can help offset earlier struggles</li>
+                <li>Academic achievements in your intended major area are particularly valuable</li>
               </ul>
               
-              <h3>Extracurricular Engagement</h3>
+              <BlogIllustrationContainer 
+                category="College" 
+                title="Showcasing your unique story"
+                position="right"
+              />
+              
+              <h3>Standardized Tests</h3>
               <p>
-                Colleges value depth over breadth. Focus on:
+                While many schools are test-optional:
               </p>
               <ul>
-                <li>Sustained commitment to activities you care about</li>
-                <li>Leadership roles and increasing responsibility</li>
-                <li>Impact and accomplishments within your activities</li>
-                <li>How activities connect to your interests and potential major</li>
+                <li>Strong scores can still strengthen your application</li>
+                <li>Some scholarships and programs still require test scores</li>
+                <li>Test-optional doesn't mean test-blind—scores may still be considered if submitted</li>
+              </ul>
+              
+              <h3>Extracurricular Involvement</h3>
+              <p>
+                Quality matters more than quantity:
+              </p>
+              <ul>
+                <li>Sustained commitment to a few activities is better than superficial involvement in many</li>
+                <li>Leadership positions, initiative, and measurable impact strengthen your profile</li>
+                <li>Activities that align with your academic interests can strengthen your narrative</li>
               </ul>
               
               <h3>Essays and Personal Statements</h3>
               <p>
-                Your writing should:
+                Your authentic voice matters:
               </p>
               <ul>
-                <li>Reveal something meaningful about you that isn't shown elsewhere in your application</li>
-                <li>Demonstrate reflection, growth, and self-awareness</li>
-                <li>Showcase your authentic voice and writing abilities</li>
-                <li>Address specific prompts fully while remaining personal</li>
+                <li>Essays should reveal something not evident elsewhere in your application</li>
+                <li>Specific, vivid details make essays memorable</li>
+                <li>Multiple drafts and feedback are essential</li>
+                <li>Supplemental essays should demonstrate knowledge of specific programs and why they're a good fit</li>
               </ul>
               
               <h3>Letters of Recommendation</h3>
               <p>
-                Strong recommendations:
+                Choose recommenders carefully:
               </p>
               <ul>
-                <li>Come from teachers who know you well academically</li>
-                <li>Provide specific examples of your contributions and character</li>
-                <li>Highlight your intellectual curiosity and classroom engagement</li>
-                <li>Address your potential for college success</li>
+                <li>Select teachers who know you well, not just those who gave you high grades</li>
+                <li>Provide recommenders with information about your activities, interests, and goals</li>
+                <li>Request letters well in advance of deadlines</li>
+              </ul>
+              
+              <h3>Demonstrated Interest</h3>
+              <p>
+                Many colleges track your engagement:
+              </p>
+              <ul>
+                <li>Campus visits, virtual tours, and information session attendance</li>
+                <li>Email communication with admissions officers</li>
+                <li>Early applications often signal strong interest</li>
               </ul>
 
-              <h2>Financial Planning Throughout the Process</h2>
+              <h2>Final Thoughts: Finding Your Best Fit</h2>
               <p>
-                College affordability requires parallel planning:
+                The college application process is ultimately about finding an institution where you can thrive academically, socially, and personally. As you work through this timeline, remember:
               </p>
               
-              <h3>Early Research (Freshman/Sophomore Year)</h3>
-              <ul>
-                <li>Understand the difference between sticker price and net price</li>
-                <li>Begin college savings if possible</li>
-                <li>Research merit scholarship criteria at potential colleges</li>
-                <li>Discuss financial parameters with family</li>
-              </ul>
+              <BlogKeyPoint
+                category="College"
+                point="The 'best' college isn't the one with the highest ranking, but the one that best aligns with your personal goals, learning style, and career aspirations."
+              />
               
-              <h3>Active Planning (Junior Year)</h3>
               <ul>
-                <li>Use net price calculators on college websites</li>
-                <li>Research both institutional and external scholarships</li>
-                <li>Consider financial fit when creating your college list</li>
-                <li>Prepare for FAFSA/CSS Profile requirements</li>
+                <li><strong>There is no perfect school</strong> – many institutions could be good fits for you</li>
+                <li><strong>Be authentic</strong> throughout the process rather than trying to package yourself to meet perceived expectations</li>
+                <li><strong>Financial considerations matter</strong> – graduating with minimal debt can provide more opportunities after college</li>
+                <li><strong>The journey is educational</strong> – the self-reflection required for college applications helps develop important life skills</li>
               </ul>
-              
-              <h3>Financial Applications (Senior Year)</h3>
-              <ul>
-                <li>Complete FAFSA as soon after October 1 as possible</li>
-                <li>Submit CSS Profile if required by your colleges</li>
-                <li>Apply for institutional and private scholarships</li>
-                <li>Compare financial aid offers carefully</li>
-                <li>Consider appealing insufficient aid packages</li>
-              </ul>
-
-              <h2>Special Considerations for Different Situations</h2>
-              
-              <h3>For Student Athletes</h3>
               <p>
-                If you're pursuing collegiate athletics:
-              </p>
-              <ul>
-                <li>Register with NCAA Eligibility Center in sophomore year</li>
-                <li>Understand academic eligibility requirements</li>
-                <li>Create athletic resume and highlight videos</li>
-                <li>Communicate with college coaches according to recruitment rules</li>
-                <li>Balance athletic and academic priorities</li>
-              </ul>
-              
-              <h3>For Arts Students</h3>
-              <p>
-                If you're pursuing visual or performing arts:
-              </p>
-              <ul>
-                <li>Develop portfolio or audition materials throughout high school</li>
-                <li>Research specific arts program requirements early</li>
-                <li>Consider pre-college summer arts programs</li>
-                <li>Prepare for additional application components like auditions or portfolio reviews</li>
-                <li>Balance technical training with academic preparation</li>
-              </ul>
-              
-              <h3>For First-Generation College Students</h3>
-              <p>
-                If you're the first in your family to attend college:
-              </p>
-              <ul>
-                <li>Connect with college access programs in your community</li>
-                <li>Seek additional mentorship from teachers, counselors, or community members</li>
-                <li>Research colleges with strong support for first-generation students</li>
-                <li>Take advantage of fee waivers for applications and testing</li>
-                <li>Consider fly-in programs that provide campus visits at no cost</li>
-              </ul>
-
-              <h2>Conclusion: Maintaining Perspective</h2>
-              <p>
-                The college application process is a marathon, not a sprint. By breaking it down into manageable steps across four years, you can reduce stress and create stronger applications.
+                By approaching the college application process with intentionality and organization, you can reduce stress, showcase your genuine strengths, and find a college where you'll flourish. This timeline provides a structured approach, but remember to customize it to your individual circumstances and needs.
               </p>
               <p>
-                Remember that the "best" college isn't necessarily the most selective one, but rather the institution that offers the right combination of academic opportunities, social environment, financial feasibility, and overall fit for your unique goals and personality.
-              </p>
-              <p>
-                Approach this journey with organization, authenticity, and openness to discovery. The self-reflection involved in the college application process is valuable regardless of where you ultimately enroll. With thoughtful planning and this comprehensive timeline as your guide, you'll be well-positioned to navigate the path to your college education with confidence.
+                Good luck on your college journey!
               </p>
             </div>
 

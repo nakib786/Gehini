@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PageHero from '../components/blocks/hero-section';
+import LearningAnimation from '../components/animations/LearningAnimation';
 
 // Subjects Offered Component
 const SubjectsOffered = () => {
@@ -203,11 +204,7 @@ const TutoringMethodology = () => {
             viewport={{ once: true }}
             className="flex justify-center"
           >
-            <img 
-              src="/placeholder-tutoring-methodology.jpg" 
-              alt="Tutoring methodology" 
-              className="rounded-lg shadow-xl max-w-full h-auto"
-            />
+            <LearningAnimation />
           </motion.div>
         </div>
       </div>

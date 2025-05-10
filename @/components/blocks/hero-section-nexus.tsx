@@ -539,7 +539,7 @@ const SmartBoardAnimation: React.FC = () => {
     const [showGKContent, setShowGKContent] = useState(false);
     
     const [notes, setNotes] = useState('');
-    const [showTutorial, setShowTutorial] = useState(true);
+    const [showTutorial, setShowTutorial] = useState(false);
     
     const lastPos = useRef({ x: 0, y: 0 });
     const ctx = useRef<CanvasRenderingContext2D | null>(null);

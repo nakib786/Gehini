@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import { useTheme } from '../../contexts/ThemeContext';
+import { WhatsAppChat } from '../ui/whatsapp-chat';
 
 // ScrollToTop component to handle scrolling to the top when route changes
 const ScrollToTop = () => {
@@ -31,6 +32,7 @@ const Layout = ({ children }: LayoutProps) => {
           {children}
         </main>
         <Footer />
+        <WhatsAppChat />
       </div>
     </div>
   );

@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PageHero from '../../components/blocks/hero-section';
+import BlogSectionBreak from '../../components/BlogSectionBreak';
+import BlogIllustrationContainer from '../../components/BlogIllustrationContainer';
+import BlogKeyPoint from '../../components/BlogKeyPoint';
 
 const MathematicsBlog = () => {
   return (
@@ -52,10 +55,22 @@ const MathematicsBlog = () => {
                 The good news is that math anxiety isn't permanent or inevitable. With the right strategies and support, students can transform their relationship with mathematics and develop both competence and confidence. This article explores practical approaches for students, parents, and educators to overcome math anxiety and build mathematical resilience.
               </p>
 
+              <BlogIllustrationContainer 
+                category="Mathematics" 
+                title="Transforming fear into confidence"
+                position="right"
+              />
+
               <h2>Understanding Math Anxiety</h2>
               <p>
                 Before addressing solutions, it's important to understand what math anxiety is and how it develops. Math anxiety typically manifests as:
               </p>
+              
+              <BlogKeyPoint
+                category="Mathematics"
+                point="Math anxiety is a real psychological condition that can significantly impact learning, not a lack of ability or effort."
+              />
+              
               <ul>
                 <li>Physical symptoms (increased heart rate, sweating, nausea) when faced with mathematical tasks</li>
                 <li>Avoidance behaviors around mathematics</li>
@@ -67,10 +82,19 @@ const MathematicsBlog = () => {
                 Math anxiety can develop for various reasons, including negative early experiences, societal messages about mathematics being inherently difficult, pressure to perform, gaps in foundational knowledge, or teaching approaches that don't align with a student's learning style.
               </p>
 
+              <BlogSectionBreak category="Mathematics" />
+
               <h2>Strategy 1: Reframe Your Relationship with Mistakes</h2>
               <p>
                 One of the most powerful shifts in overcoming math anxiety is changing your relationship with mistakes. In mathematics, mistakes aren't failures—they're essential parts of the learning process.
               </p>
+
+              <BlogIllustrationContainer 
+                category="Mathematics" 
+                title="Mistakes are stepping stones to mastery"
+                position="left"
+              />
+
               <h3>Practical steps:</h3>
               <ul>
                 <li><strong>Normalize mistakes:</strong> Understand that even professional mathematicians make errors regularly. The difference is in how they respond to those errors.</li>
@@ -78,6 +102,12 @@ const MathematicsBlog = () => {
                 <li><strong>Create mistake journals:</strong> Keep track of common errors and the insights they provide. This transforms mistakes from sources of shame into tools for growth.</li>
                 <li><strong>Celebrate productive struggle:</strong> Recognize that the feeling of working through difficulty is the sensation of your brain growing stronger—similar to how muscles develop through resistance training.</li>
               </ul>
+              
+              <BlogKeyPoint
+                category="Mathematics"
+                point="Mistakes in mathematics are not failures—they're essential parts of the learning process that help identify gaps in understanding."
+              />
+              
               <p>
                 By reframing mistakes as valuable learning opportunities rather than evidence of inadequacy, students can approach mathematics with greater resilience and less anxiety.
               </p>
@@ -97,6 +127,12 @@ const MathematicsBlog = () => {
                 By ensuring that foundational concepts are secure, students build confidence in their ability to tackle more advanced material.
               </p>
 
+              <BlogIllustrationContainer 
+                category="Mathematics" 
+                title="Growth mindset unlocks potential"
+                position="right"
+              />
+
               <h2>Strategy 3: Develop a Growth Mindset for Mathematics</h2>
               <p>
                 A fixed mindset—the belief that mathematical ability is an innate trait rather than a developed skill—significantly contributes to math anxiety. Cultivating a growth mindset is essential for mathematical confidence.
@@ -108,9 +144,17 @@ const MathematicsBlog = () => {
                 <li><strong>Learn about brain plasticity:</strong> Understanding how the brain physically changes with learning can reinforce that mathematical ability is developed, not fixed.</li>
                 <li><strong>Seek out growth-oriented role models:</strong> Read about mathematicians and successful individuals who overcame challenges in learning mathematics.</li>
               </ul>
+              
+              <BlogKeyPoint
+                category="Mathematics"
+                point="The belief that mathematical ability is fixed is one of the strongest predictors of math anxiety and underperformance."
+              />
+              
               <p>
                 By adopting a growth mindset, students transform their perception of challenge from a threat to an opportunity for development.
               </p>
+
+              <BlogSectionBreak category="Mathematics" />
 
               <h2>Strategy 4: Use Multiple Representations and Approaches</h2>
               <p>
@@ -126,6 +170,12 @@ const MathematicsBlog = () => {
               <p>
                 By engaging with mathematics through multiple modalities, students develop richer understanding and more entry points to complex concepts.
               </p>
+
+              <BlogIllustrationContainer 
+                category="Mathematics" 
+                title="A supportive environment fosters success"
+                position="left"
+              />
 
               <h2>Strategy 5: Create a Supportive Learning Environment</h2>
               <p>
@@ -153,6 +203,13 @@ const MathematicsBlog = () => {
               <p>
                 Mathematics often feels arbitrary and disconnected from reality, which can increase anxiety. Finding personal meaning and relevance in mathematical concepts helps transform abstract symbols into powerful tools for understanding the world.
               </p>
+
+              <BlogIllustrationContainer 
+                category="Mathematics" 
+                title="Finding real-world connections"
+                position="right"
+              />
+
               <h3>Practical steps:</h3>
               <ul>
                 <li><strong>Explore real-world applications:</strong> Investigate how the mathematics you're learning is used in contexts you care about.</li>
@@ -163,6 +220,8 @@ const MathematicsBlog = () => {
               <p>
                 When mathematics feels meaningful and purposeful, motivation increases and anxiety diminishes.
               </p>
+
+              <BlogSectionBreak category="Mathematics" />
 
               <h2>Special Considerations for Different Age Groups</h2>
               
@@ -176,6 +235,17 @@ const MathematicsBlog = () => {
                 <li>Avoid transmitting your own math anxiety if you experienced it as a student</li>
                 <li>Celebrate mathematical thinking in everyday life (cooking, shopping, etc.)</li>
               </ul>
+              
+              <BlogKeyPoint
+                category="Mathematics"
+                point="Children who see mathematics as a playful, exploratory activity develop stronger interest and ability than those who experience it only as a test-based subject."
+              />
+
+              <BlogIllustrationContainer 
+                category="Mathematics" 
+                title="Age-appropriate strategies"
+                position="left"
+              />
 
               <h3>For Adolescents (Ages 11-18)</h3>
               <p>
@@ -198,6 +268,8 @@ const MathematicsBlog = () => {
                 <li>Set realistic expectations and timeframes for rebuilding skills</li>
                 <li>Connect mathematical learning to clear personal or professional goals</li>
               </ul>
+
+              <BlogSectionBreak category="Mathematics" />
 
               <h2>Conclusion: From Anxiety to Confidence</h2>
               <p>

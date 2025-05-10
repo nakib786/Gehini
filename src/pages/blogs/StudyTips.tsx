@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PageHero from '../../components/blocks/hero-section';
+import BlogSectionBreak from '../../components/BlogSectionBreak';
+import BlogIllustrationContainer from '../../components/BlogIllustrationContainer';
+import BlogKeyPoint from '../../components/BlogKeyPoint';
 
 const StudyTipsBlog = () => {
   return (
@@ -49,10 +52,22 @@ const StudyTipsBlog = () => {
                 Not all students learn the same way. Understanding your unique learning style can transform your study sessions from frustrating to productive. This guide explores effective study techniques tailored to different learning preferences, helping you maximize retention and comprehension.
               </p>
 
+              <BlogIllustrationContainer 
+                category="Study Tips" 
+                title="Personalized learning leads to better results"
+                position="right"
+              />
+
               <h2>Understanding Learning Styles</h2>
               <p>
                 Learning styles represent different ways our brains process and retain information. While most people use a combination of styles, you likely have a dominant preference. The VARK model identifies four primary learning styles:
               </p>
+              
+              <BlogKeyPoint
+                category="Study Tips"
+                point="Matching study techniques to your natural learning preferences can reduce frustration and dramatically increase retention and comprehension."
+              />
+              
               <ul>
                 <li><strong>Visual:</strong> Learning through seeing</li>
                 <li><strong>Auditory:</strong> Learning through hearing</li>
@@ -63,10 +78,19 @@ const StudyTipsBlog = () => {
                 Identifying your preferred style allows you to choose study techniques that align with your natural learning tendencies.
               </p>
 
+              <BlogSectionBreak category="Study Tips" />
+
               <h2>Technique 1: Visual Learning Strategies</h2>
               <p>
                 Visual learners process information best when it's presented in charts, graphs, illustrations, and other visual formats.
               </p>
+
+              <BlogIllustrationContainer 
+                category="Study Tips" 
+                title="Visualize concepts for better understanding"
+                position="left"
+              />
+
               <h3>Effective Techniques:</h3>
               <ul>
                 <li><strong>Mind Mapping:</strong> Create colorful, branched diagrams that visually organize information, showing relationships between concepts. Use different colors for different categories or levels of importance.</li>
@@ -74,6 +98,12 @@ const StudyTipsBlog = () => {
                 <li><strong>Visualization:</strong> Transform abstract concepts into mental images. For example, imagine historical events as scenes in a movie or chemical processes as animated sequences.</li>
                 <li><strong>Infographics:</strong> Convert dense text into visually appealing infographics that organize information into a more digestible format.</li>
               </ul>
+              
+              <BlogKeyPoint
+                category="Study Tips"
+                point="Visual learners remember up to 65% more information when it's presented in visual formats rather than plain text."
+              />
+              
               <p>
                 Visual learners should also consider studying in clutter-free environments to reduce visual distractions that can compete for attention.
               </p>
@@ -82,6 +112,13 @@ const StudyTipsBlog = () => {
               <p>
                 Auditory learners retain information best when it's heard or discussed. Their learning improves through listening and speaking activities.
               </p>
+
+              <BlogIllustrationContainer 
+                category="Study Tips" 
+                title="Hear and speak for deeper comprehension"
+                position="right"
+              />
+
               <h3>Effective Techniques:</h3>
               <ul>
                 <li><strong>Recorded Lectures:</strong> Record and replay lectures or study material. Listening to the content multiple times helps reinforce the information.</li>
@@ -89,14 +126,29 @@ const StudyTipsBlog = () => {
                 <li><strong>Study Groups:</strong> Join or form discussion groups where concepts can be verbally explored, debated, and explained.</li>
                 <li><strong>Audio Summaries:</strong> Create audio summaries of your notes and listen to them during activities like commuting or exercising.</li>
               </ul>
+              
+              <BlogKeyPoint
+                category="Study Tips"
+                point="Speaking information aloud improves recall by 10-15% compared to reading silently, even for non-auditory learners."
+              />
+              
               <p>
                 Auditory learners often benefit from finding quiet study environments where they can speak aloud without distraction or embarrassment.
               </p>
+
+              <BlogSectionBreak category="Study Tips" />
 
               <h2>Technique 3: Reading/Writing Learning Methods</h2>
               <p>
                 Reading/writing learners prefer information displayed as words. They learn best through reading texts and writing notes or summaries.
               </p>
+
+              <BlogIllustrationContainer 
+                category="Study Tips" 
+                title="Text-based learning strengthens memory"
+                position="left"
+              />
+
               <h3>Effective Techniques:</h3>
               <ul>
                 <li><strong>Rewriting Notes:</strong> Transform class notes or textbook information into your own words. This process of translation reinforces understanding and memory.</li>
@@ -112,6 +164,13 @@ const StudyTipsBlog = () => {
               <p>
                 Kinesthetic learners understand and remember information best when physically engaged with the learning material through movement or hands-on experiences.
               </p>
+
+              <BlogIllustrationContainer 
+                category="Study Tips" 
+                title="Learning through physical engagement"
+                position="right"
+              />
+
               <h3>Effective Techniques:</h3>
               <ul>
                 <li><strong>Practical Applications:</strong> Whenever possible, apply theoretical knowledge to practical, hands-on exercises or experiments.</li>
@@ -123,10 +182,19 @@ const StudyTipsBlog = () => {
                 Kinesthetic learners benefit from taking frequent, short breaks during study sessions to stay physically refreshed and mentally engaged.
               </p>
 
+              <BlogSectionBreak category="Study Tips" />
+
               <h2>Technique 5: Multimodal Learning Integration</h2>
               <p>
                 Many students actually have multimodal learning preferences, meaning they learn best when using a combination of different styles.
               </p>
+
+              <BlogIllustrationContainer 
+                category="Study Tips" 
+                title="Combining approaches for maximum retention"
+                position="left"
+              />
+
               <h3>Effective Techniques:</h3>
               <ul>
                 <li><strong>Method Rotation:</strong> Study the same material using different approaches. For example, read a chapter, create a visual summary, record yourself explaining it, then teach it to someone else.</li>
@@ -134,9 +202,17 @@ const StudyTipsBlog = () => {
                 <li><strong>Cornell Notes:</strong> Adopt this note-taking system that integrates writing, summarization, and verbal review for comprehensive reinforcement.</li>
                 <li><strong>Project-Based Learning:</strong> Design personal projects that require reading, writing, visualization, and hands-on application of the material.</li>
               </ul>
+              
+              <BlogKeyPoint
+                category="Study Tips"
+                point="Students who combine multiple learning approaches typically retain 75% more information than those who rely on a single method."
+              />
+              
               <p>
                 This comprehensive approach creates multiple neural pathways for accessing information, making recall easier in different contexts.
               </p>
+
+              <BlogSectionBreak category="Study Tips" />
 
               <h2>Conclusion: Adapting for Success</h2>
               <p>

@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PageHero from '../../components/blocks/hero-section';
+import BlogSectionBreak from '../../components/BlogSectionBreak';
+import BlogIllustrationContainer from '../../components/BlogIllustrationContainer';
+import BlogKeyPoint from '../../components/BlogKeyPoint';
 
 const LiteracyBlog = () => {
   return (
@@ -52,10 +55,22 @@ const LiteracyBlog = () => {
                 This article explores practical strategies for parents and educators to nurture a genuine, lasting appreciation for books and reading in children of all ages.
               </p>
 
+              <BlogIllustrationContainer 
+                category="Literacy" 
+                title="Reading opens doors to new worlds and possibilities"
+                position="right"
+              />
+
               <h2>The Profound Benefits of Regular Reading</h2>
               <p>
                 Before diving into strategies, it's worth understanding why reading matters so much in children's development:
               </p>
+              
+              <BlogKeyPoint
+                category="Literacy"
+                point="Reading is not just an academic skill—it's a fundamental life skill that shapes cognitive, emotional, and social development."
+              />
+              
               <ul>
                 <li><strong>Cognitive development:</strong> Reading builds neural pathways, expands vocabulary, and strengthens comprehension skills.</li>
                 <li><strong>Emotional intelligence:</strong> Stories help children understand emotions, perspectives, and social situations in a safe context.</li>
@@ -68,7 +83,15 @@ const LiteracyBlog = () => {
                 With these benefits in mind, let's explore how to cultivate a genuine love of reading from early childhood through adolescence.
               </p>
 
+              <BlogSectionBreak category="Literacy" />
+
               <h2>Starting Early: Building Foundations in Early Childhood (Ages 0-5)</h2>
+              
+              <BlogIllustrationContainer 
+                category="Literacy" 
+                title="Early exposure creates lasting habits"
+                position="left"
+              />
               
               <h3>1. Make Reading a Ritual</h3>
               <p>
@@ -96,6 +119,12 @@ const LiteracyBlog = () => {
               <p>
                 Children's natural interests provide windows into reading:
               </p>
+              
+              <BlogKeyPoint
+                category="Literacy"
+                point="Children who choose their own reading materials are more engaged and motivated to read independently."
+              />
+              
               <ul>
                 <li>Observe what captures your child's attention and find books on those topics</li>
                 <li>Be willing to read favorite books repeatedly—repetition builds language skills</li>
@@ -114,7 +143,15 @@ const LiteracyBlog = () => {
                 <li>Take "field trips" to locations featured in beloved stories when possible</li>
               </ul>
 
+              <BlogSectionBreak category="Literacy" />
+
               <h2>The Elementary Years: Developing Independent Readers (Ages 6-10)</h2>
+              
+              <BlogIllustrationContainer 
+                category="Literacy" 
+                title="Independence with guidance builds confidence"
+                position="right"
+              />
               
               <h3>1. Find the Right Books</h3>
               <p>
@@ -137,6 +174,11 @@ const LiteracyBlog = () => {
                 <li>Read the same book separately and discuss it together</li>
                 <li>Listen to audiobooks during car rides or other transitions</li>
               </ul>
+              
+              <BlogKeyPoint
+                category="Literacy"
+                point="Reading aloud to children builds critical listening and comprehension skills even after they can read independently."
+              />
 
               <h3>3. Create Social Reading Experiences</h3>
               <p>
@@ -149,6 +191,12 @@ const LiteracyBlog = () => {
                 <li>Facilitate book exchanges among classmates or cousins</li>
               </ul>
 
+              <BlogIllustrationContainer 
+                category="Literacy" 
+                title="Creative expression enhances reading comprehension"
+                position="left"
+              />
+
               <h3>4. Connect Reading to Creating</h3>
               <p>
                 Extending reading through creative expression:
@@ -159,6 +207,8 @@ const LiteracyBlog = () => {
                 <li>Encourage writing stories inspired by favorite authors or characters</li>
                 <li>Start a reading journal to record thoughts and reactions</li>
               </ul>
+
+              <BlogSectionBreak category="Literacy" />
 
               <h2>The Adolescent Years: Maintaining Momentum (Ages 11-18)</h2>
               
@@ -172,6 +222,12 @@ const LiteracyBlog = () => {
                 <li>Introduce young adult literature that addresses relevant themes and questions</li>
                 <li>Connect teen interests to related reading materials (sports biographies, music history, etc.)</li>
               </ul>
+
+              <BlogIllustrationContainer 
+                category="Literacy" 
+                title="Technology can enhance the reading experience"
+                position="right"
+              />
 
               <h3>2. Leverage Technology Thoughtfully</h3>
               <p>
@@ -194,6 +250,11 @@ const LiteracyBlog = () => {
                 <li>Introduce diverse authors who offer varied perspectives on life experiences</li>
                 <li>Respect that challenging or uncomfortable reading can promote growth and understanding</li>
               </ul>
+              
+              <BlogKeyPoint
+                category="Literacy"
+                point="Connecting reading to real-world issues helps teens see books as tools for understanding their world, not just academic exercises."
+              />
 
               <h3>4. Model Lifelong Reading</h3>
               <p>
@@ -206,7 +267,15 @@ const LiteracyBlog = () => {
                 <li>Visit bookstores or libraries together as a regular activity</li>
               </ul>
 
+              <BlogSectionBreak category="Literacy" />
+
               <h2>Addressing Common Challenges</h2>
+              
+              <BlogIllustrationContainer 
+                category="Literacy" 
+                title="Overcoming obstacles builds stronger readers"
+                position="left"
+              />
               
               <h3>For the Reluctant Reader</h3>
               <p>
@@ -230,6 +299,8 @@ const LiteracyBlog = () => {
                 <li>Discuss differences in how the brain processes digital vs. print reading</li>
                 <li>Help children develop metacognitive awareness of how different reading mediums affect their focus and comprehension</li>
               </ul>
+
+              <BlogSectionBreak category="Literacy" />
 
               <h2>Conclusion: The Gift That Lasts a Lifetime</h2>
               <p>
